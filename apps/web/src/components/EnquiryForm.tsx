@@ -1,12 +1,22 @@
-import { useMutation } from "@tanstack/react-query";
 import { CSSProperties, FormEvent, useState } from "react";
-import { EnquiryPayload, submitEnquiry } from "../api/enquiries";
 
 type Props = {
   title: string;
 };
 
 const WHATSAPP_NUMBER = "919790555270";
+const ENQUIRIES_STORAGE_KEY = "game2grow_enquiries";
+
+type EnquiryPayload = {
+  audience: "corporate" | "institution";
+  name: string;
+  organisation: string;
+  designation: string;
+  mobile: string;
+  email: string;
+  programInterest: string;
+  message: string;
+};
 
 const categoryOptions = [
   "Corporate Training",
@@ -42,22 +52,45 @@ const buildWhatsAppMessage = (form: ReturnType<typeof getInitialForm>) => {
   ].join("\n");
 };
 
+const hasText = (value: string, minLength: number) => value.trim().length >= minLength;
+const isEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+
+const saveEnquiryInBrowser = async (payload: EnquiryPayload) => {
+  if (
+    !hasText(payload.name, 2) ||
+    !hasText(payload.organisation, 2) ||
+    !hasText(payload.designation, 2) ||
+    !hasText(payload.mobile, 8) ||
+    !isEmail(payload.email) ||
+    !hasText(payload.programInterest, 2) ||
+    !hasText(payload.message, 5)
+  ) {
+    throw new Error("Invalid enquiry payload");
+  }
+
+  const entry = {
+    ...payload,
+    createdAt: new Date().toISOString()
+  };
+  const existing = localStorage.getItem(ENQUIRIES_STORAGE_KEY);
+  const parsed = existing ? (JSON.parse(existing) as unknown[]) : [];
+  localStorage.setItem(ENQUIRIES_STORAGE_KEY, JSON.stringify([...parsed, entry]));
+};
+
 export function EnquiryForm({ title }: Props) {
   const [form, setForm] = useState(getInitialForm());
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [successMeta, setSuccessMeta] = useState<{
     submittedAt: string;
     whatsappUrl: string;
-    storedOnServer: boolean;
+    storedInBrowser: boolean;
   } | null>(null);
-
-  const mutation = useMutation({
-    mutationFn: (payload: EnquiryPayload) => submitEnquiry(payload)
-  });
 
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
     setSuccessMeta(null);
+    setIsSubmitting(true);
 
     const payload: EnquiryPayload = {
       audience: form.category === "Corporate Training" ? "corporate" : "institution",
@@ -73,11 +106,13 @@ export function EnquiryForm({ title }: Props) {
     const whatsappText = buildWhatsAppMessage(form);
     const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappText)}`;
 
-    let storedOnServer = true;
+    let storedInBrowser = true;
     try {
-      await mutation.mutateAsync(payload);
+      await saveEnquiryInBrowser(payload);
     } catch {
-      storedOnServer = false;
+      storedInBrowser = false;
+    } finally {
+      setIsSubmitting(false);
     }
 
     const opened = window.open(whatsappUrl, "_blank", "noopener,noreferrer");
@@ -89,7 +124,7 @@ export function EnquiryForm({ title }: Props) {
     setSuccessMeta({
       submittedAt: new Date().toLocaleString("en-IN"),
       whatsappUrl,
-      storedOnServer
+      storedInBrowser
     });
     setForm(getInitialForm());
   };
@@ -171,10 +206,10 @@ export function EnquiryForm({ title }: Props) {
 
       <button
         type="submit"
-        disabled={mutation.isPending}
+        disabled={isSubmitting}
         className="w-full rounded-md bg-brandGold px-4 py-2.5 text-sm font-semibold tracking-[0.14em] text-black transition hover:-translate-y-0.5 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-70"
       >
-        {mutation.isPending ? "PROCESSING..." : "BOOK FREE DEMO"}
+        {isSubmitting ? "PROCESSING..." : "BOOK FREE DEMO"}
       </button>
 
       {successMeta && (
@@ -200,9 +235,9 @@ export function EnquiryForm({ title }: Props) {
             We opened WhatsApp with all your enquiry details. Press send in WhatsApp to complete your booking request.
           </p>
           <p className="mt-2 text-xs text-emerald-200/90">Submitted at: {successMeta.submittedAt}</p>
-          {!successMeta.storedOnServer && (
+          {!successMeta.storedInBrowser && (
             <p className="mt-2 text-xs text-amber-200">
-              Note: Website backup save is currently unavailable, but your WhatsApp message flow is working.
+              Note: Browser backup save is currently unavailable, but your WhatsApp message flow is working.
             </p>
           )}
           <a

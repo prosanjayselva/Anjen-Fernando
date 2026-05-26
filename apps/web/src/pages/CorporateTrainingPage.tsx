@@ -1,11 +1,10 @@
 import { useMemo, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
 import {
-  fetchPrograms,
+  corporatePrograms,
   deliveryFormats,
-  ProgramCategory,
-  ProgramFormat
-} from "../api/programs";
+  type ProgramCategory,
+  type ProgramFormat
+} from "../lib/corporatePrograms";
 import { methodologyPillars, programTopics } from "../lib/brochureContent";
 import { siteImages } from "../lib/siteImages";
 import { TopicMarquee } from "../components/TopicMarquee";
@@ -33,22 +32,22 @@ export function CorporateTrainingPage() {
   const [selectedFormat, setSelectedFormat] = useState<(typeof formatOptions)[number]>("All");
   const [search, setSearch] = useState("");
 
-  const queryParams = useMemo(
-    () => ({
-      search,
-      category: selectedCategory,
-      format: selectedFormat
-    }),
-    [search, selectedCategory, selectedFormat]
-  );
+  const filteredPrograms = useMemo(() => {
+    const normalizedSearch = search.toLowerCase().trim();
 
-  const programsQuery = useQuery({
-    queryKey: ["programs", queryParams],
-    queryFn: () => fetchPrograms(queryParams)
-  });
+    return corporatePrograms.filter((program) => {
+      const matchesSearch =
+        normalizedSearch.length === 0 ||
+        program.name.toLowerCase().includes(normalizedSearch) ||
+        program.outcome.toLowerCase().includes(normalizedSearch);
+      const matchesCategory = selectedCategory === "All" || program.category === selectedCategory;
+      const matchesFormat =
+        selectedFormat === "All" || program.recommendedFormats.includes(selectedFormat as ProgramFormat);
 
-  const filteredPrograms = programsQuery.data?.data ?? [];
-  const totalPrograms = programsQuery.data?.total ?? 24;
+      return matchesSearch && matchesCategory && matchesFormat;
+    });
+  }, [search, selectedCategory, selectedFormat]);
+  const totalPrograms = corporatePrograms.length;
 
   return (
     <section className="space-y-10">
@@ -145,10 +144,8 @@ export function CorporateTrainingPage() {
           </select>
         </div>
 
-        {programsQuery.isLoading ? (
-          <p className="mt-6 text-zinc-300">Loading programs...</p>
-        ) : programsQuery.isError ? (
-          <p className="mt-6 text-red-400">Failed to load program library from backend.</p>
+        {filteredPrograms.length === 0 ? (
+          <p className="mt-6 text-zinc-300">No programs found for this filter.</p>
         ) : (
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {filteredPrograms.map((program) => (

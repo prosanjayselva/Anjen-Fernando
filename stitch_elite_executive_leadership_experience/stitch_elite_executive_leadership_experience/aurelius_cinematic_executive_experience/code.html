@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AURELIUS Executive Leadership | The Architecture of Transformation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&amp;family=Montserrat:wght@400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#54450e",
+                    "primary-fixed": "#ffe088",
+                    "on-secondary": "#3b2f00",
+                    "on-surface": "#e5e2e1",
+                    "secondary": "#dbc582",
+                    "error": "#ffb4ab",
+                    "surface-bright": "#3a3939",
+                    "error-container": "#93000a",
+                    "on-surface-variant": "#d0c5af",
+                    "secondary-container": "#574811",
+                    "on-background": "#e5e2e1",
+                    "secondary-fixed": "#f8e19b",
+                    "on-primary-fixed-variant": "#574500",
+                    "on-secondary-fixed": "#231b00",
+                    "on-primary-fixed": "#241a00",
+                    "on-secondary-container": "#ccb775",
+                    "on-error": "#690005",
+                    "inverse-on-surface": "#313030",
+                    "surface-container-high": "#2a2a2a",
+                    "primary": "#f2ca50",
+                    "surface-container-highest": "#353534",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-error-container": "#ffdad6",
+                    "tertiary": "#cecece",
+                    "surface-container-low": "#1c1b1b",
+                    "primary-container": "#d4af37",
+                    "surface-variant": "#353534",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "inverse-surface": "#e5e2e1",
+                    "on-tertiary": "#2f3131",
+                    "primary-fixed-dim": "#e9c349",
+                    "secondary-fixed-dim": "#dbc582",
+                    "tertiary-container": "#b2b3b3",
+                    "on-tertiary-container": "#434546",
+                    "outline": "#99907c",
+                    "background": "#131313",
+                    "inverse-primary": "#735c00",
+                    "on-primary": "#3c2f00",
+                    "on-primary-container": "#554300",
+                    "surface-tint": "#e9c349",
+                    "surface-dim": "#131313",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "outline-variant": "#4d4635",
+                    "tertiary-fixed": "#e2e2e2",
+                    "surface": "#131313",
+                    "surface-container": "#201f1f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "section-gap-mobile": "80px",
+                    "gutter": "32px",
+                    "margin-edge": "64px",
+                    "unit": "8px",
+                    "section-gap-desktop": "160px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "body-lg": ["Montserrat"],
+                    "label-caps": ["Montserrat"],
+                    "display-lg": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "body-md": ["Montserrat"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "display-lg-mobile": ["44px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.8", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.2em", "fontWeight": "600"}],
+                    "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>:root {
+    --cursor-size: 20px
+    }
+.glass-card {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.03);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1)
+    }
+.glass-card:hover {
+    border-color: rgba(212, 175, 55, 0.5);
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: inset 0 0 30px rgba(212, 175, 55, 0.08)
+    }
+.cinematic-grain::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBxRXtCFHUnhG0ESbcLSg6lVpNSrKuDNFFhzicjx3UqrQUjIhB6ArAtIVND4Zd6-1UjEFCcGzeahqcD3cg1MGNmfgVdu35LwAh2s9lJVUx4ITTf5slNh5XAMIaJC6XdFmChuyCc6-P--QT-DGWdvilhp4kgarfmUKGFnOMgxjbssCWGD8mM29H1fdmQ6pcrxK7HM2dILz3LqwFpO1lyaIYpg_aH9H_owCMQpKv4X1TBE0pqC-QqaUR8kDELRL1ZMcLchWDAVLPH4UQ);
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 9999
+    }
+.text-reveal {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
+    }
+.text-reveal span {
+    display: block;
+    transform: translatey(110%);
+    transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1)
+    }
+.revealed span {
+    transform: translatey(0)
+    }
+.custom-cursor {
+    width: var(--cursor-size);
+    height: var(--cursor-size);
+    border: 1px solid #f2ca50;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 10000;
+    transition: transform 0.2s ease, width 0.3s ease, height 0.3s ease, background 0.3s ease;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference
+    }
+.cursor-hover {
+    --cursor-size: 80px;
+    background: rgba(242, 202, 80, 0.1);
+    border-width: 0.5px
+    }
+.parallax-wrap {
+    overflow: hidden
+    }
+.parallax-img {
+    transform: scale(1.1);
+    transition: transform 0.1s ease-out
+    }
+.section-fade {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translatey(30px);
+    transition: all 1s cubic-bezier(0.23, 1, 0.32, 1)
+    }
+.section-fade.visible {
+    opacity: 1;
+    filter: blur(0);
+    transform: translatey(0)
+    }
+.stagger-item {
+    opacity: 0;
+    transform: translatey(20px);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1)
+    }
+.visible .stagger-item {
+    opacity: 1;
+    transform: translatey(0)
+    }
+.magnetic-btn {
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1)
+    }
+.input-glow:focus-within {
+    box-shadow: 0 10px 30px -10px rgba(242, 202, 80, 0.2)
+    }
+html {
+    scroll-behavior: smooth
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24
+    }</style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary selection:text-on-primary cinematic-grain">
+<div class="custom-cursor hidden md:block" id="cursor"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/0 transition-all duration-700 h-24 flex items-center" id="navbar">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-edge w-full">
+<div class="font-display-lg text-headline-md tracking-tighter text-primary cursor-hover-trigger">AURELIUS</div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-500 font-label-caps text-label-caps cursor-hover-trigger" href="#">Philosophy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-500 font-label-caps text-label-caps cursor-hover-trigger" href="#">Programs</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-500 font-label-caps text-label-caps cursor-hover-trigger" href="#">Insights</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-500 font-label-caps text-label-caps cursor-hover-trigger" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 font-label-caps text-label-caps hover:bg-primary/90 transition-all duration-300 active:scale-95 magnetic-btn cursor-hover-trigger">Reserve Consult</button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden parallax-wrap">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-40 parallax-img" data-alt="Corporate skyscraper at dusk" id="hero-parallax" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoX-3q0PAR_IN3KkwG6KnS4vKDqcAxqh7FWVRKy5Bc-vLze0eLkaCQC7eaNQHQq7SMhnEjPaeTwnS0a45tkAVygjd01Jv9RauLV9PnKrsYs-XtY-aVWD3Ge6lzWNwY6gyaY3wHt-y6RcAV8mAmP9OP2vvmRP5RRGJgjTm-WWlH7n-5svItSJ8iIO_She8c-B5YoG11EYmPcuGh24OoYnBUd4ci2wiwjxiZZZU5GlXiLbjHBskKeo2kiYTK5wYwKKx1AOLtO7aBSQ8"/>
+<div class="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background"></div>
+</div>
+<div class="relative z-10 text-center max-w-4xl px-margin-edge">
+<span class="font-label-caps text-label-caps text-primary tracking-[0.4em] mb-6 block section-fade">EXECUTIVE EXCELLENCE</span>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-12 text-reveal" id="hero-heading">
+<span>The Architecture of <span class="text-primary italic">Transformation</span></span>
+</h1>
+<div class="flex justify-center section-fade" style="transition-delay: 0.4s;">
+<button class="glass-card px-12 py-5 text-on-surface font-label-caps text-label-caps border border-white/10 hover:border-primary transition-all duration-500 magnetic-btn cursor-hover-trigger">
+                        Begin Your Evolution
+                    </button>
+</div>
+</div>
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-50 section-fade" style="transition-delay: 0.6s;">
+<span class="font-label-caps text-[10px] tracking-widest uppercase">Scroll to Explore</span>
+<div class="w-[1px] h-12 bg-gradient-to-b from-primary to-transparent"></div>
+</div>
+</section>
+<!-- About/Founder -->
+<section class="max-w-container-max mx-auto px-margin-edge py-section-gap-desktop section-fade" id="philosophy">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div class="relative group parallax-wrap">
+<div class="absolute -inset-4 bg-primary/5 blur-3xl rounded-full"></div>
+<img class="relative w-full aspect-[4/5] object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-700 parallax-img" data-alt="Portrait of founder" id="founder-parallax" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0x8DKTIJZUlRZFaWIDM4PBzNfTNW5nm5c3Wn3K8Ec9XjD0Tb60UodGq1m3PKtjXMSyH3WvcK0O35MHYw5i-eYN-kOqXTZI3F9i8oquSeI9PURLMOeegL87vm6k_4n35W_38h0mKaOBZDGFQ7XzoV3c3_I9lykS1Q6z4Ustx-YJprZ3aFahMnTiMci4hR3giMgwcYzuFTkrKSpceJpccBIhffoFuGYU-nkMVogTdUcwJtc7bBPmKVLss5AOWnApuzazK4-JwXgxco"/>
+</div>
+<div class="space-y-8 pl-0 md:pl-12">
+<span class="font-label-caps text-label-caps text-primary stagger-item">OUR PHILOSOPHY</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface text-reveal" id="philosophy-heading">
+<span>Precision Leadership for the New Era</span>
+</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed stagger-item" style="transition-delay: 0.2s;">
+                        True transformation is not an event; it is an architectural process. At Aurelius, we guide the world's most influential leaders through a journey of refinement, clarity, and unyielding focus. Our methodology transcends traditional coaching, merging strategic brilliance with the psychological depth required to sustain elite performance.
+                    </p>
+<div class="grid grid-cols-2 gap-gutter pt-8 border-t border-outline-variant stagger-item" style="transition-delay: 0.4s;">
+<div class="glass-card p-6 rounded-none cursor-hover-trigger">
+<div class="font-display-lg text-headline-lg text-primary mb-1">500+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">CEOs TRANSFORMED</div>
+</div>
+<div class="glass-card p-6 rounded-none cursor-hover-trigger">
+<div class="font-display-lg text-headline-lg text-primary mb-1">20B+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">MARKET CAP IMPACT</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services -->
+<section class="bg-surface-container-lowest py-section-gap-desktop section-fade">
+<div class="max-w-container-max mx-auto px-margin-edge">
+<div class="text-center mb-24">
+<span class="font-label-caps text-label-caps text-primary tracking-widest block mb-4 stagger-item">CURATED SOLUTIONS</span>
+<h2 class="font-headline-lg text-headline-lg text-reveal" id="services-heading"><span>Elite Domains</span></h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter" id="services-grid">
+<!-- Service Cards with staggered animation -->
+<div class="glass-card p-10 min-h-[320px] flex flex-col justify-between group stagger-item cursor-hover-trigger" style="transition-delay: 0.1s;">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="star">star</span>
+<div>
+<h3 class="font-headline-md text-2xl mb-4">Executive Coaching</h3>
+<p class="font-body-md text-on-surface-variant">One-on-one strategic refinement for the modern visionary.</p>
+</div>
+</div>
+<div class="glass-card p-10 min-h-[320px] flex flex-col justify-between group stagger-item cursor-hover-trigger" style="transition-delay: 0.2s;">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="hub">hub</span>
+<div>
+<h3 class="font-headline-md text-2xl mb-4">Leadership Development</h3>
+<p class="font-body-md text-on-surface-variant">Systemic growth for high-impact executive teams.</p>
+</div>
+</div>
+<div class="glass-card p-10 min-h-[320px] flex flex-col justify-between group stagger-item cursor-hover-trigger" style="transition-delay: 0.3s;">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="corporate_fare">corporate_fare</span>
+<div>
+<h3 class="font-headline-md text-2xl mb-4">Corporate Training</h3>
+<p class="font-body-md text-on-surface-variant">Custom curricula for organizational excellence at scale.</p>
+</div>
+</div>
+<div class="glass-card p-10 min-h-[320px] flex flex-col justify-between group stagger-item cursor-hover-trigger" style="transition-delay: 0.4s;">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="psychology">psychology</span>
+<div>
+<h3 class="font-headline-md text-2xl mb-4">Strategic Mentality</h3>
+<p class="font-body-md text-on-surface-variant">Developing the cognitive resilience of world-class leaders.</p>
+</div>
+</div>
+<div class="glass-card p-10 min-h-[320px] flex flex-col justify-between group stagger-item cursor-hover-trigger" style="transition-delay: 0.5s;">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="query_stats">query_stats</span>
+<div>
+<h3 class="font-headline-md text-2xl mb-4">Performance Metrics</h3>
+<p class="font-body-md text-on-surface-variant">Data-driven insights for measurable human capital growth.</p>
+</div>
+</div>
+<div class="glass-card p-10 min-h-[320px] flex flex-col justify-between group stagger-item cursor-hover-trigger" style="transition-delay: 0.6s;">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="diamond">diamond</span>
+<div>
+<h3 class="font-headline-md text-2xl mb-4">Bespoke Advising</h3>
+<p class="font-body-md text-on-surface-variant">Confidential counsel for high-stakes decision making.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us -->
+<section class="bg-surface py-section-gap-desktop relative overflow-hidden section-fade">
+<div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary rounded-full blur-[120px]"></div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-edge relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+<div class="text-center space-y-6 stagger-item">
+<div class="w-16 h-16 mx-auto border border-primary/30 flex items-center justify-center rotate-45 group hover:rotate-90 transition-transform duration-700 cursor-hover-trigger">
+<span class="material-symbols-outlined text-primary -rotate-45 group-hover:-rotate-90 transition-transform duration-700" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<h3 class="font-headline-md text-2xl">Absolute Confidentiality</h3>
+<p class="font-body-md text-on-surface-variant">Operating within the strictest ethical boundaries for global figureheads.</p>
+</div>
+<div class="text-center space-y-6 stagger-item" style="transition-delay: 0.2s;">
+<div class="w-16 h-16 mx-auto border border-primary/30 flex items-center justify-center rotate-45 group hover:rotate-90 transition-transform duration-700 cursor-hover-trigger">
+<span class="material-symbols-outlined text-primary -rotate-45 group-hover:-rotate-90 transition-transform duration-700" data-icon="history_edu" style="font-variation-settings: 'FILL' 1;">history_edu</span>
+</div>
+<h3 class="font-headline-md text-2xl">Proven Pedigree</h3>
+<p class="font-body-md text-on-surface-variant">Guided by coaches with decades of top-tier corporate and military background.</p>
+</div>
+<div class="text-center space-y-6 stagger-item" style="transition-delay: 0.4s;">
+<div class="w-16 h-16 mx-auto border border-primary/30 flex items-center justify-center rotate-45 group hover:rotate-90 transition-transform duration-700 cursor-hover-trigger">
+<span class="material-symbols-outlined text-primary -rotate-45 group-hover:-rotate-90 transition-transform duration-700" data-icon="architecture" style="font-variation-settings: 'FILL' 1;">architecture</span>
+</div>
+<h3 class="font-headline-md text-2xl">Bespoke Frameworks</h3>
+<p class="font-body-md text-on-surface-variant">Rejecting 'standardized' models for curated, architected transformations.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-section-gap-desktop bg-surface-container-lowest section-fade">
+<div class="max-w-container-max mx-auto px-margin-edge">
+<div class="text-center mb-24">
+<span class="font-label-caps text-label-caps text-primary block mb-4 stagger-item">VOICES OF IMPACT</span>
+<h2 class="font-headline-lg text-headline-lg text-reveal" id="testimonial-heading"><span>Global Directives</span></h2>
+</div>
+<div class="max-w-4xl mx-auto stagger-item">
+<div class="glass-card p-16 text-center space-y-8 relative overflow-hidden cursor-hover-trigger">
+<span class="material-symbols-outlined text-primary/20 text-8xl absolute -top-4 -left-4 opacity-30 select-none" data-icon="format_quote">format_quote</span>
+<p class="font-headline-md text-3xl italic leading-relaxed text-on-surface relative z-10">
+                            "Aurelius provided the intellectual and strategic clarity I needed during our global acquisition phase. Their approach is unlike any coaching firm I've encountered—deeply professional, intensely private, and remarkably effective."
+                        </p>
+<div class="relative z-10">
+<div class="font-label-caps text-label-caps text-primary mb-2">MARCUS V. SULLIVAN</div>
+<div class="font-body-md text-on-surface-variant opacity-60">Global Director, Financial Services Group</div>
+</div>
+<div class="flex justify-center gap-4 relative z-10">
+<div class="w-12 h-[1px] bg-primary"></div>
+<div class="w-4 h-[1px] bg-primary/30"></div>
+<div class="w-4 h-[1px] bg-primary/30"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Insights -->
+<section class="bg-surface-container-low py-section-gap-desktop section-fade">
+<div class="max-w-container-max mx-auto px-margin-edge">
+<div class="text-center mb-24">
+<span class="font-label-caps text-label-caps text-primary block mb-4 stagger-item">THE KNOWLEDGE BASE</span>
+<h2 class="font-headline-lg text-headline-lg text-reveal" id="insights-heading"><span>Executive Insights</span></h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter" id="insights-grid">
+<div class="group cursor-pointer stagger-item cursor-hover-trigger" style="transition-delay: 0.1s;">
+<div class="overflow-hidden mb-8 aspect-video relative">
+<img class="w-full h-full object-cover grayscale brightness-50 group-hover:scale-110 group-hover:grayscale-0 transition-all duration-1000" data-alt="Boardroom table at night" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO30Y4XwuQ8v8vq_OCa57-TqIE8Rj5Z5nZBmha04GBeoolDgfbNW_ubTK1rFeQdBFqWTzpiIxmFElLiwjJX99RwJXXRGoS9SRU2wyNhY3mORl08WequgdbzwgXzvox8SnzdNemwSJUE3YLUBno8TZxYIDaIxb7tyPzg7wYeoTVPZq3LUT6CuCZ3EhoLAxupyiLRPA7fj15QB1CpTaa3j0LTCpOa1Yrlpcq7FFXnj8ECQeS3SDh2TnzbK_ATx3uskGuQuPoxmYGfkE"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<span class="font-label-caps text-[10px] text-primary mb-4 block">STRATEGY • 8 MIN READ</span>
+<h3 class="font-headline-md text-2xl group-hover:text-primary transition-colors">The Silos of Silence: Why Elite Teams Fail to Communicate</h3>
+</div>
+<div class="group cursor-pointer stagger-item cursor-hover-trigger" style="transition-delay: 0.2s;">
+<div class="overflow-hidden mb-8 aspect-video relative">
+<img class="w-full h-full object-cover grayscale brightness-50 group-hover:scale-110 group-hover:grayscale-0 transition-all duration-1000" data-alt="Blueprints and fountain pen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCANH4CxkuKfwu1mwBfGgvSdDqnV9bzLL8mOgZh2c_InSWdNHNGTEwApqohuBMOKUDr2bDTJ-sJ_LE5ruFaEiTDcIAF6A1VTadzvVXZnSEy6eKHfcfmK-rWNIor3oJ68gEIbJGgmbXp8iP7bKCC34n3MGfkN1UwtyU58jWb0xI7NYnjBiSU5ablBgsDtwgsHn2ldfsGMpbDpxDXRfg58It_5LYyGV8v0t5Y0kFJsgp1b0jW9tzzRu7Ke5O65h3jCSp2sch_UhSFY4"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<span class="font-label-caps text-[10px] text-primary mb-4 block">PERFORMANCE • 12 MIN READ</span>
+<h3 class="font-headline-md text-2xl group-hover:text-primary transition-colors">Biological Resilience: The CEO's Guide to Cognitive Endurance</h3>
+</div>
+<div class="group cursor-pointer stagger-item cursor-hover-trigger" style="transition-delay: 0.3s;">
+<div class="overflow-hidden mb-8 aspect-video relative">
+<img class="w-full h-full object-cover grayscale brightness-50 group-hover:scale-110 group-hover:grayscale-0 transition-all duration-1000" data-alt="Minimalist luxury office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHfh0j1MDDjud8YCUSfV2UrJyuSSqHwHDhasTS4tNcVCmLshfPi8NBnRu55YBV50LmuhUCcvtNhk0Plvkbya_84J_aUjGUeXaMkzH7QUdBc7_MImxHiXSN72VtEeWbAfmuRlPDfChcvLgv4SjrjfhzrwjKNw2HfTIw2GIoJe6rXbThZH9iOhueV6ism__Z7JhW4FHmeSEL41jziR3VYeFxQ9Wx8fyoDgztrQoz7ldt3OqEHr2Q6TF6lzE2Ewv7Q-urk9d3BlE_sto"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<span class="font-label-caps text-[10px] text-primary mb-4 block">CULTURE • 10 MIN READ</span>
+<h3 class="font-headline-md text-2xl group-hover:text-primary transition-colors">Architecting Trust in Hyper-Growth Environments</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-section-gap-desktop bg-background relative overflow-hidden section-fade">
+<div class="max-w-container-max mx-auto px-margin-edge">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div>
+<span class="font-label-caps text-label-caps text-primary block mb-6 stagger-item">INITIATION</span>
+<h2 class="font-display-lg text-headline-lg mb-8 text-reveal" id="contact-heading"><span>Command Your Future</span></h2>
+<p class="font-body-lg text-on-surface-variant max-w-md mb-12 stagger-item">Entry into our executive programs is by selection only. Inquire below for a confidential consultation with our admissions director.</p>
+<div class="space-y-4 stagger-item">
+<div class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+<span class="font-label-caps text-label-caps">London • Zurich • Tokyo • New York</span>
+</div>
+</div>
+</div>
+<div class="glass-card p-12 stagger-item">
+<form class="space-y-10">
+<div class="relative input-glow transition-all duration-300">
+<input class="w-full bg-transparent border-b border-outline-variant py-4 focus:outline-none focus:border-primary transition-all placeholder:text-on-surface-variant/30 text-body-md font-body-md" placeholder="Full Name" type="text"/>
+</div>
+<div class="relative input-glow transition-all duration-300">
+<input class="w-full bg-transparent border-b border-outline-variant py-4 focus:outline-none focus:border-primary transition-all placeholder:text-on-surface-variant/30 text-body-md font-body-md" placeholder="Corporate Email" type="email"/>
+</div>
+<div class="relative input-glow transition-all duration-300">
+<input class="w-full bg-transparent border-b border-outline-variant py-4 focus:outline-none focus:border-primary transition-all placeholder:text-on-surface-variant/30 text-body-md font-body-md" placeholder="Organization &amp; Title" type="text"/>
+</div>
+<button class="w-full bg-primary text-on-primary py-5 font-label-caps text-label-caps tracking-widest hover:bg-primary/90 transition-all duration-300 magnetic-btn cursor-hover-trigger" type="submit">RESERVE CONSULTATION</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap-desktop bg-surface border-t border-outline-variant relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto px-margin-edge">
+<div class="md:col-span-2 space-y-8">
+<div class="font-display-lg text-headline-lg text-primary cursor-hover-trigger">AURELIUS</div>
+<p class="font-body-md text-on-surface-variant max-w-sm">The world's premier destination for executive transformation and high-stakes leadership development.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-8">NAVIGATION</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md cursor-hover-trigger" href="#">Philosophy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md cursor-hover-trigger" href="#">Programs</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md cursor-hover-trigger" href="#">Insights</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md cursor-hover-trigger" href="#">Global Offices</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-8">LEGAL</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md cursor-hover-trigger" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md cursor-hover-trigger" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md cursor-hover-trigger" href="#">Press Kit</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-edge mt-24 pt-8 border-t border-outline-variant/30">
+<div class="flex flex-col md:flex-row justify-between items-center gap-4 text-on-surface-variant opacity-60 text-sm font-label-caps">
+<span>© 2024 AURELIUS EXECUTIVE LEADERSHIP. ALL RIGHTS RESERVED.</span>
+<div class="flex gap-8">
+<span class="cursor-hover-trigger">LI</span>
+<span class="cursor-hover-trigger">TW</span>
+<span class="cursor-hover-trigger">IG</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Custom Cursor Logic
+        const cursor = document.getElementById('cursor');
+        const triggers = document.querySelectorAll('.cursor-hover-trigger');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        triggers.forEach(trigger => {
+            trigger.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
+            trigger.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+        });
+
+        // Navbar Transition on Scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-surface/80', 'backdrop-blur-xl', 'border-b', 'border-primary/10', 'h-20');
+                nav.classList.remove('bg-surface/0', 'h-24');
+            } else {
+                nav.classList.remove('bg-surface/80', 'backdrop-blur-xl', 'border-b', 'border-primary/10', 'h-20');
+                nav.classList.add('bg-surface/0', 'h-24');
+            }
+        });
+
+        // Parallax Effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroImg = document.getElementById('hero-parallax');
+            const founderImg = document.getElementById('founder-parallax');
+            
+            if (heroImg) {
+                heroImg.style.transform = `scale(1.1) translateY(${scrolled * 0.3}px)`;
+            }
+            if (founderImg) {
+                const rect = founderImg.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    founderImg.style.transform = `scale(1.1) translateY(${(rect.top - window.innerHeight/2) * 0.1}px)`;
+                }
+            }
+        });
+
+        // Scroll Intersection Observer for Reveal Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    const textReveals = entry.target.querySelectorAll('.text-reveal');
+                    textReveals.forEach(reveal => reveal.classList.add('revealed'));
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-fade').forEach(section => observer.observe(section));
+
+        // Magnetic Button Effect
+        const magneticBtns = document.querySelectorAll('.magnetic-btn');
+        magneticBtns.forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                btn.style.transform = `translate(${x * 0.3}px, ${y * 0.5}px)`;
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = `translate(0, 0)`;
+            });
+        });
+
+        // Soft Floating Effect for interactive cards
+        const glassCards = document.querySelectorAll('.glass-card');
+        glassCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                card.style.setProperty('--mouse-x', `${x}%`);
+                card.style.setProperty('--mouse-y', `${y}%`);
+                card.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(242, 202, 80, 0.08) 0%, rgba(255, 255, 255, 0.02) 50%)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.background = `rgba(255, 255, 255, 0.02)`;
+            });
+        });
+        
+        // Initial load animations
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelector('.section-fade').classList.add('visible');
+                document.getElementById('hero-heading').classList.add('revealed');
+            }, 300);
+        });
+    </script>
+</body></html>

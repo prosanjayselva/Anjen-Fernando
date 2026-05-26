@@ -1,0 +1,14 @@
+{
+  "name": "game2grow-platform",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev:web",
+    "dev:web": "npm --workspace @game2grow/web run dev",
+    "build": "npm run build:web",
+    "build:web": "npm --workspace @game2grow/web run build"
+  }
+}

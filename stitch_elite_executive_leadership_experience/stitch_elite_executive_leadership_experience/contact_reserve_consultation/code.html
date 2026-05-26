@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#353534",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "on-background": "#e5e2e1",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-secondary": "#3b2f00",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "tertiary-fixed": "#e2e2e2",
+                    "on-error": "#690005",
+                    "surface-variant": "#353534",
+                    "on-primary-fixed": "#241a00",
+                    "primary-fixed": "#ffe088",
+                    "tertiary-container": "#b2b3b3",
+                    "outline": "#99907c",
+                    "surface": "#131313",
+                    "on-tertiary": "#2f3131",
+                    "on-surface-variant": "#d0c5af",
+                    "error-container": "#93000a",
+                    "secondary-fixed": "#f8e19b",
+                    "on-primary-container": "#554300",
+                    "primary-fixed-dim": "#e9c349",
+                    "on-secondary-fixed-variant": "#54450e",
+                    "inverse-primary": "#735c00",
+                    "secondary": "#dbc582",
+                    "surface-bright": "#3a3939",
+                    "on-tertiary-container": "#434546",
+                    "background": "#131313",
+                    "secondary-container": "#574811",
+                    "inverse-on-surface": "#313030",
+                    "surface-container": "#201f1f",
+                    "secondary-fixed-dim": "#dbc582",
+                    "on-secondary-container": "#ccb775",
+                    "error": "#ffb4ab",
+                    "surface-tint": "#e9c349",
+                    "surface-container-high": "#2a2a2a",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-dim": "#131313",
+                    "on-surface": "#e5e2e1",
+                    "primary": "#f2ca50",
+                    "surface-container-low": "#1c1b1b",
+                    "outline-variant": "#4d4635",
+                    "primary-container": "#d4af37",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#574500",
+                    "on-primary": "#3c2f00",
+                    "on-secondary-fixed": "#231b00",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "tertiary": "#cecece"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "section-gap-mobile": "80px",
+                    "gutter": "32px",
+                    "container-max": "1440px",
+                    "margin-edge": "64px",
+                    "unit": "8px",
+                    "section-gap-desktop": "160px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Playfair Display"],
+                    "label-caps": ["Montserrat"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "body-lg": ["Montserrat"],
+                    "headline-md": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "body-md": ["Montserrat"],
+                    "headline-lg-mobile": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.2em", "fontWeight": "600"}],
+                    "display-lg-mobile": ["44px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.8", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.03);
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        .magnetic-glow {
+            position: relative;
+        }
+        .magnetic-glow::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 140%;
+            height: 140%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+        .gold-underline-expand {
+            position: relative;
+        }
+        .gold-underline-expand::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 1px;
+            background: #f2ca50;
+            transition: width 0.5s ease, left 0.5s ease;
+        }
+        .gold-underline-expand:focus-within::after {
+            width: 100%;
+            left: 0;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/10 backdrop-blur-xl border-b border-primary/10">
+<nav class="flex justify-between items-center max-w-container-max mx-auto px-margin-edge h-20">
+<div class="font-display-lg text-headline-md tracking-tighter text-primary">AURELIUS</div>
+<div class="hidden md:flex gap-10 items-center">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-500" href="#">Philosophy</a>
+<a class="font-label-caps text-label-caps text-primary font-semibold border-b border-primary" href="#">Programs</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-500" href="#">Insights</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-500" href="#">Contact</a>
+</div>
+<button class="font-label-caps text-label-caps bg-surface border border-primary/20 px-6 py-3 cursor-pointer active:scale-95 transition-transform hover:opacity-80">
+                Reserve Consult
+            </button>
+</nav>
+</header>
+<main class="pt-40 pb-section-gap-desktop">
+<!-- Hero Section & Focus Header -->
+<section class="max-w-container-max mx-auto px-margin-edge text-center mb-24">
+<div class="inline-block glass-card px-4 py-1 mb-8">
+<span class="font-label-caps text-label-caps text-primary">CONFIDENTIAL PLACEMENT INTAKE</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-background mb-6">Forge Your Legacy.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                A high-stakes evaluation for leaders who demand absolute clarity. This process ensures alignment between your trajectory and our executive methodology.
+            </p>
+</section>
+<!-- Intake Multi-Step Flow -->
+<section class="max-w-[900px] mx-auto px-margin-edge">
+<div class="glass-card p-12 md:p-16 relative">
+<!-- Progress Indicator -->
+<div class="flex items-center gap-4 mb-16">
+<div class="flex-1 h-[1px] bg-primary"></div>
+<div class="flex-1 h-[1px] bg-outline-variant"></div>
+<div class="flex-1 h-[1px] bg-outline-variant"></div>
+<span class="font-label-caps text-label-caps text-primary ml-4">STEP 01/03</span>
+</div>
+<!-- Form Content -->
+<div class="space-y-16">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-4">Strategic Intent</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Identify the core objective driving your request for executive immersion.</p>
+</div>
+<div class="space-y-12">
+<!-- Input Field -->
+<div class="gold-underline-expand group">
+<label class="font-label-caps text-label-caps text-on-surface-variant mb-2 block transition-colors group-focus-within:text-primary">FULL LEGAL NAME</label>
+<input class="w-full bg-transparent border-none border-b border-outline-variant p-0 pb-4 focus:ring-0 font-display-lg text-headline-md text-on-background placeholder:text-surface-variant" placeholder="Johnathan R. Sterling" type="text"/>
+</div>
+<!-- Input Field -->
+<div class="gold-underline-expand group">
+<label class="font-label-caps text-label-caps text-on-surface-variant mb-2 block transition-colors group-focus-within:text-primary">ORGANIZATION &amp; ROLE</label>
+<input class="w-full bg-transparent border-none border-b border-outline-variant p-0 pb-4 focus:ring-0 font-display-lg text-headline-md text-on-background placeholder:text-surface-variant" placeholder="CEO, Global Ventures Inc." type="text"/>
+</div>
+<!-- Input Field -->
+<div class="gold-underline-expand group">
+<label class="font-label-caps text-label-caps text-on-surface-variant mb-2 block transition-colors group-focus-within:text-primary">PRIMARY OBJECTIVE</label>
+<select class="w-full bg-transparent border-none border-b border-outline-variant p-0 pb-4 focus:ring-0 font-headline-md text-headline-md text-on-background appearance-none">
+<option class="bg-surface">Corporate Restructuring</option>
+<option class="bg-surface">Personal Legacy Definition</option>
+<option class="bg-surface">Crisis Leadership Development</option>
+<option class="bg-surface">Elite Performance Optimization</option>
+</select>
+</div>
+</div>
+<!-- Absolute Confidentiality Badge -->
+<div class="flex items-center gap-4 py-8 px-8 border border-outline-variant bg-surface-container-low">
+<span class="material-symbols-outlined text-primary" data-icon="lock" data-weight="fill">lock</span>
+<div>
+<span class="font-label-caps text-label-caps block text-on-background">ABSOLUTE CONFIDENTIALITY</span>
+<span class="font-body-md text-[13px] text-on-surface-variant">Your data is encrypted and accessible only to the Admissions Director.</span>
+</div>
+</div>
+<!-- Navigation Actions -->
+<div class="flex justify-between items-center pt-8">
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors">SAVE DRAFT</button>
+<button class="magnetic-glow bg-surface text-on-background border border-primary/40 px-12 py-5 font-label-caps text-label-caps hover:bg-primary hover:text-on-primary transition-all duration-500">
+                            CONTINUE TO ALIGNMENT
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Direct Line Section -->
+<section class="max-w-container-max mx-auto px-margin-edge mt-section-gap-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div class="relative group">
+<div class="absolute -inset-4 bg-primary/5 blur-3xl rounded-full opacity-50"></div>
+<img alt="Admissions Director" class="w-full h-[600px] object-cover grayscale contrast-125 filter group-hover:grayscale-0 transition-all duration-700" data-alt="A portrait of a distinguished male executive in his late 40s, wearing a charcoal bespoke suit, standing in a dimly lit, high-end private office with mahogany bookshelves and a city skyline visible through a large window at dusk. The lighting is cinematic, with soft amber highlights reflecting off polished surfaces. The mood is authoritative yet approachable, perfectly embodying the quiet luxury and elite coaching brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZky2JTZCA2G8nJ4XI4QctLuYp401XNUqu36BSE5o-8iwaNNcQuYvN9eUhXxNAcVDsHXUPncu-zagQibj2v4EV74TEpJprS0vRg7G8M-BG5h7zwgcg-HEmUjRIL-eRvRqlZPOWL8fxVhB5FWi6kgNURGMNq3T-lXVg1QsT-p085vdbFPpvcaQmT4oncZc7nr_CtAXyHZj2xy8A52cuWgItSHd6Y_arb8os-4LpSoFMBIeYDKu2niG3zvWZ023sbH5I_bHv8c4l2Aw"/>
+</div>
+<div class="md:pl-16">
+<div class="font-label-caps text-label-caps text-primary mb-4">DIRECT LINE</div>
+<h2 class="font-display-lg text-headline-lg mb-8">Speak with the Director of Admissions.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 leading-relaxed">
+                        If your situation requires immediate strategic attention or carries sensitive geopolitical implications, skip the intake and request a secure direct line.
+                    </p>
+<div class="space-y-6">
+<div class="flex items-center gap-6 p-6 border-b border-outline-variant group cursor-pointer hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="encrypted">encrypted</span>
+<div>
+<div class="font-label-caps text-label-caps">SECURE CHANNEL</div>
+<div class="font-body-md text-on-surface-variant">Request Signal or Telegram coordinates</div>
+</div>
+</div>
+<div class="flex items-center gap-6 p-6 border-b border-outline-variant group cursor-pointer hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="event_note">event_note</span>
+<div>
+<div class="font-label-caps text-label-caps">PRIVATE AUDIENCE</div>
+<div class="font-body-md text-on-surface-variant">15-minute alignment call (Strict Vetting Applies)</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap-desktop bg-surface border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto px-margin-edge">
+<div class="col-span-1 md:col-span-1">
+<div class="font-display-lg text-headline-lg text-primary mb-6">AURELIUS</div>
+<p class="font-body-md text-on-surface-variant">Executive Leadership immersion for the modern sovereign.</p>
+</div>
+<div class="col-span-1">
+<h4 class="font-label-caps text-label-caps text-on-background mb-6">EXPLORE</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Philosophy</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Programs</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Insights</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-label-caps text-label-caps text-on-background mb-6">RESOURCES</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Press Kit</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Global Offices</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-label-caps text-label-caps text-on-background mb-6">LOCATIONS</h4>
+<p class="font-body-md text-on-surface-variant">Geneva • Singapore • New York • London</p>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-edge mt-24 pt-8 border-t border-outline-variant/30 text-center">
+<p class="font-body-md text-on-surface-variant text-[12px] opacity-60">© 2024 AURELIUS EXECUTIVE LEADERSHIP. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+</body></html>

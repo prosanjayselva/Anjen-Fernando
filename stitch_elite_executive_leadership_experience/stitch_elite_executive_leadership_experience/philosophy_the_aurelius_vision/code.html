@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AURELIUS | Methodology &amp; Vision</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Montserrat:wght@400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.03);
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        .magnetic-glow {
+            position: relative;
+        }
+        .magnetic-glow::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+        .gold-underline {
+            position: relative;
+        }
+        .gold-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 1px;
+            background: #f2ca50;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-highest": "#353534",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "on-background": "#e5e2e1",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-secondary": "#3b2f00",
+                      "on-tertiary-fixed-variant": "#454747",
+                      "tertiary-fixed": "#e2e2e2",
+                      "on-error": "#690005",
+                      "surface-variant": "#353534",
+                      "on-primary-fixed": "#241a00",
+                      "primary-fixed": "#ffe088",
+                      "tertiary-container": "#b2b3b3",
+                      "outline": "#99907c",
+                      "surface": "#131313",
+                      "on-tertiary": "#2f3131",
+                      "on-surface-variant": "#d0c5af",
+                      "error-container": "#93000a",
+                      "secondary-fixed": "#f8e19b",
+                      "on-primary-container": "#554300",
+                      "primary-fixed-dim": "#e9c349",
+                      "on-secondary-fixed-variant": "#54450e",
+                      "inverse-primary": "#735c00",
+                      "secondary": "#dbc582",
+                      "surface-bright": "#3a3939",
+                      "on-tertiary-container": "#434546",
+                      "background": "#131313",
+                      "secondary-container": "#574811",
+                      "inverse-on-surface": "#313030",
+                      "surface-container": "#201f1f",
+                      "secondary-fixed-dim": "#dbc582",
+                      "on-secondary-container": "#ccb775",
+                      "error": "#ffb4ab",
+                      "surface-tint": "#e9c349",
+                      "surface-container-high": "#2a2a2a",
+                      "inverse-surface": "#e5e2e1",
+                      "surface-dim": "#131313",
+                      "on-surface": "#e5e2e1",
+                      "primary": "#f2ca50",
+                      "surface-container-low": "#1c1b1b",
+                      "outline-variant": "#4d4635",
+                      "primary-container": "#d4af37",
+                      "on-error-container": "#ffdad6",
+                      "on-primary-fixed-variant": "#574500",
+                      "on-primary": "#3c2f00",
+                      "on-secondary-fixed": "#231b00",
+                      "tertiary-fixed-dim": "#c6c6c7",
+                      "tertiary": "#cecece"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "section-gap-mobile": "80px",
+                      "gutter": "32px",
+                      "container-max": "1440px",
+                      "margin-edge": "64px",
+                      "unit": "8px",
+                      "section-gap-desktop": "160px"
+              },
+              "fontFamily": {
+                      "display-lg": ["Playfair Display"],
+                      "label-caps": ["Montserrat"],
+                      "display-lg-mobile": ["Playfair Display"],
+                      "body-lg": ["Montserrat"],
+                      "headline-md": ["Playfair Display"],
+                      "headline-lg": ["Playfair Display"],
+                      "body-md": ["Montserrat"],
+                      "headline-lg-mobile": ["Playfair Display"]
+              },
+              "fontSize": {
+                      "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.2em", "fontWeight": "600"}],
+                      "display-lg-mobile": ["44px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.8", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                      "headline-md": ["32px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                      "headline-lg": ["40px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary/30">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/10 backdrop-blur-xl border-b border-primary/10 h-20">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-edge h-full">
+<div class="font-display-lg text-headline-md tracking-tighter text-primary">AURELIUS</div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="font-label-caps text-label-caps text-primary font-semibold border-b border-primary" href="#">Philosophy</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-500" href="#">Programs</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-500" href="#">Insights</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-500" href="#">Contact</a>
+</div>
+<button class="bg-black border border-primary/40 px-6 py-2 font-label-caps text-label-caps text-primary magnetic-glow transition-all duration-300 hover:opacity-80 active:scale-95">
+                Reserve Consult
+            </button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-40" data-alt="A cinematic, low-angle shot of a minimalist, dark architectural space featuring polished black marble surfaces and subtle gold lighting. The atmosphere is one of absolute quiet luxury and executive focus. Soft light catches the edges of structural pillars, creating a sense of depth and gravitas in a moody, matte-black environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQzFdn17TkisNXdGIps39AANI5ZzMvlMzckDtgzxvfQrSDSsAMqdNI4DTu87MyU9547pEPuKFJTSKh19XOV2we4WRNZdyLV1zF5Wqy9rJTqBEZfttkYi0--E-oglMEM3oQU60ggzE0qgIYMEpaeyorVH7PqvhJtdftRwbpGvVBhfI5LokZmEKXWHPuNWAioaaVM1Q28uFmGCehOQ-Gdn9Z4OtN3fjDRBUjzaBM3xdi7OsuNpZmQ_TkRC1H9r_EmAHc4bcSZQSR1-0"/>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/80 to-background"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-edge text-center">
+<span class="font-label-caps text-label-caps text-primary tracking-[0.4em] mb-6 block">ESTABLISHED MMXXIV</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-8 max-w-4xl mx-auto">Mastery of the Self, Command of the Outcome.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Aurelius is the premier destination for executive transformation. We bridge the gap between human potential and global legacy through a methodology rooted in stoic discipline and modern strategic foresight.</p>
+</div>
+</section>
+<!-- Split Founder Story -->
+<section class="py-section-gap-desktop max-w-container-max mx-auto px-margin-edge">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div class="relative aspect-[4/5] md:aspect-auto md:h-[700px]">
+<img class="w-full h-full object-cover grayscale brightness-75" data-alt="A sophisticated black and white portrait of a visionary founder in a tailored charcoal suit, seated in a high-end, minimalist office with deep shadows and sharp, dramatic lighting. The mood is authoritative and contemplative, capturing the essence of elite executive coaching and quiet luxury through high-contrast photography and meticulous composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFpXvrPwsKUmHVGitBJfEkNyiWza3JOq1Frl6NCI-gj-8FeA8sMVQJNeCHWfl4V1QGNG6Iz4C58MTSAP8WBcebWYrqkwLrxgJXWUDcD5lUj5Eu1FCXsiKmP37D6ieB1SNqZKZSdngH9ydHznEBLQF6P7-j5fzaCi5psqldASsLFc6rWAsgm_BsA4UM_VdZFxAMOT5IEw8Wao9A8cApWDHs_x8CgjFBDaCZXp-o-wT-59Ud6BUOIOAlmivmKhBB4OFNrUbY-rcBQMA"/>
+<div class="absolute -bottom-10 -right-10 hidden md:block w-64 p-8 glass-card">
+<span class="font-display-lg text-headline-md text-primary block italic mb-2">Marcus V.</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Managing Partner</span>
+</div>
+</div>
+<div class="md:pl-16 mt-16 md:mt-0">
+<span class="font-label-caps text-label-caps text-primary mb-4 block">THE GENESIS</span>
+<h2 class="font-display-lg text-headline-lg-mobile md:text-headline-lg mb-8">A Vision Built on Silence and Precision.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">In an era of relentless noise, Aurelius was founded as a sanctuary for the world's most influential minds. Our founder envisioned a framework that didn't just 'consult' but 'catalyzed' internal evolution.</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-10">We operate in the shadows of the boardroom, providing the intellectual and emotional leverage required to lead with absolute certainty. This is not coaching; it is the architecting of excellence.</p>
+<button class="font-label-caps text-label-caps text-primary border-b border-primary pb-2 hover:opacity-70 transition-all">Read the Manifesto</button>
+</div>
+</div>
+</section>
+<!-- Achievement Counters (Bento Inspired) -->
+<section class="py-section-gap-desktop bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-edge">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="p-12 glass-card text-center flex flex-col items-center">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">auto_awesome</span>
+<div class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-2">500+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Global Leaders Transformed</span>
+</div>
+<div class="p-12 glass-card text-center flex flex-col items-center">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">currency_exchange</span>
+<div class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-2">$12B</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Aggregate Value Created</span>
+</div>
+<div class="p-12 glass-card text-center flex flex-col items-center">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">public</span>
+<div class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-2">14</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Global Hubs of Excellence</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Methodology Timeline -->
+<section class="py-section-gap-desktop max-w-container-max mx-auto px-margin-edge">
+<div class="text-center mb-24">
+<span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">EVOLUTION</span>
+<h2 class="font-display-lg text-headline-lg-mobile md:text-headline-lg">Our Methodological Journey</h2>
+</div>
+<div class="relative">
+<!-- Vertical Line -->
+<div class="absolute left-1/2 top-0 bottom-0 w-px bg-primary/20 -translate-x-1/2 hidden md:block"></div>
+<!-- Timeline Item 1 -->
+<div class="relative grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-32 mb-24 items-center">
+<div class="md:text-right">
+<span class="font-label-caps text-label-caps text-primary mb-2 block">PHASE I | 2018</span>
+<h3 class="font-display-lg text-headline-md mb-4">The Stoic Core</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Integration of classical Stoic principles with behavioral psychology to build foundational resilience in high-pressure environments.</p>
+</div>
+<div class="hidden md:block absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background z-10"></div>
+<div class="glass-card p-1">
+<img class="w-full aspect-video object-cover opacity-60" data-alt="A detailed, macro shot of an ancient marble bust of Marcus Aurelius, softly lit by a single warm golden spotlight. The texture of the weathered stone is visible, contrasted against a deep, infinite matte black background, symbolizing the timeless wisdom and stoic foundation of the brand's philosophy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGEkgeD8tpGSJN8xFxshH-Iz_lbnhqwk3WwtViW7ui7I8ASywyh5QohaLtuiCjAj3H4U25sZHa-Ohl5DDCEOVEQioPpbcMS-mqaOqyVYigXB8vumllFZ_YyXQB2g_jwEKT5Bc7Xh7pqoD044gDrtQmuEjS0JyeiI7J6oyuSdK5FC_FUtDjDjO8kptJea7BkJqgHR_MxnwNj1zSAQ__MzHziQleUShQrNKkRV_ERqJoEH28_rWErCqVxfU2758QxhSWV2l4PreDBxI"/>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-32 mb-24 items-center">
+<div class="order-2 md:order-1 glass-card p-1">
+<img class="w-full aspect-video object-cover opacity-60" data-alt="An abstract visualization of digital neural networks and data flow, rendered in glowing gold filaments on a deep charcoal background. The image represents the integration of strategic foresight and modern technology into the Aurelius methodology, maintaining a high-end, futuristic, and exclusive aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxecZtRRv-Sqz1H7qfGVBrqkpIc8JuDzOs1waJrjKg3_duDDy2I8haFHdGaZSFtZg7nORN-D8Yy42p7PGpT71FOkynmwptdoRCs28cHONccP37RuaK-N0uP8OcmY9_3h9ZPNAyNAdftS_PBqfkXtFil4DlE3mDjmpE1BoQjrXNZSWGz2Bx-uDlE9RCXfMi2NAnj3aJDIGJm8wroKwy3bXtlnXijR_4iR7Di_b6tSPLSnMqcOnnpQX-yReMlEDLlRXeaQD6_hXTLj0"/>
+</div>
+<div class="hidden md:block absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background z-10"></div>
+<div class="order-1 md:order-2">
+<span class="font-label-caps text-label-caps text-primary mb-2 block">PHASE II | 2021</span>
+<h3 class="font-display-lg text-headline-md mb-4">Strategic Foresight</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Expanding into predictive modeling and elite network orchestration to move from defensive resilience to proactive command.</p>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="relative grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-32 items-center">
+<div class="md:text-right">
+<span class="font-label-caps text-label-caps text-primary mb-2 block">PHASE III | PRESENT</span>
+<h3 class="font-display-lg text-headline-md mb-4">Global Legacy</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">The full synthesis of mind, body, and strategy. A holistic ecosystem for the modern executive athlete and visionary.</p>
+</div>
+<div class="hidden md:block absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background z-10"></div>
+<div class="glass-card p-1">
+<img class="w-full aspect-video object-cover opacity-60" data-alt="A wide-angle shot of a sleek, dark glass skyscraper reflecting a dramatic city sunset, with gold light shimmering across its surface. The image represents the peak of global leadership and executive legacy, captured with cinematic flair and a deep, moody atmosphere that aligns with the quiet luxury brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQqWaJRsXxew-atohuKbZhphVB26OPn62Ng0_qjQHa1yLE1p0EthnlaXai-RccqxmV7zUc_MxIpC8j6sasmP6X_6tMKYsMyYhpNJUAUCjmjD9UebCD3o4AJ9AiGbvlVtJUWE7HV_q_BOA7n1gYCsAb_9ENsELfaQwgeDbBRBlZ91zIWedAt5ErmNrEpZRPM3PaWgEuD85Yowz22FBRX8L-qi4VnXgG9NP1P3uaPF3mH3sVMncuk4OYq8KgBaoQ5zOyM5vxZzTupYY"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Philosophy Cards -->
+<section class="py-section-gap-desktop bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-edge">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16">
+<div class="max-w-2xl">
+<span class="font-label-caps text-label-caps text-primary mb-4 block">OUR PHILOSOPHY</span>
+<h2 class="font-display-lg text-headline-lg-mobile md:text-headline-lg">Tenets of Command</h2>
+</div>
+<div class="mt-8 md:mt-0">
+<span class="font-body-md text-body-md text-on-surface-variant">Three pillars that define every Aurelius engagement.</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="group relative">
+<div class="mb-8 overflow-hidden glass-card">
+<img class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-110 opacity-50" data-alt="A focused close-up of two people in formal attire engaged in a deep, serious conversation in a high-end lounge. The lighting is low and intimate, with gold reflections in the background. The mood is one of trust and absolute focus, emphasizing the intellectual depth of the Aurelius coaching experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUSGa0ndfohAEDXOetoa2yJd8Y5RP5n-V3U4HLe7KV_lmPTjvq1m8flZv83mADbsYIp4BmN4psQnteTSkISgTaqnSQUy03pxeaqcIkc4BYKftd1ugmFCsN_iKnULmp4-apzBZtf6ormKDjV1M-AlAFgvVdwwGJqom0_mXkCI9w8KboYbkn-RbzL534WpMqgSVx4Klg9HPm_sbojqlcivpUGxaPPZl8Nawt3HwyPASUAb1tt7BsrYdMxh7C8rhxb9rbP3I_YYfVLBw"/>
+</div>
+<h3 class="font-display-lg text-headline-md mb-4 gold-underline">Equanimity</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">The ability to maintain absolute calm and clarity amidst the volatility of global markets and internal organizational pressure.</p>
+</div>
+<div class="group relative">
+<div class="mb-8 overflow-hidden glass-card">
+<img class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-110 opacity-50" data-alt="A dark, minimalist office desk with a single, expensive fountain pen resting on a crisp white ledger. The scene is illuminated by a sharp, dramatic spotlight that casts long shadows. It represents the precision and decisive action central to the Aurelius methodology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRVB7snVUb8Be31AZCPpPgcfIpDxCrh2T7nj3RMQzUDQQy2q_N5uyW-Jyl2ZgX2FTwoGS1g0vp9ou8lz1bTCstQVuNSj2m_9mh-B3NCfTeMgvl46FZqSCC_3-CEobyVfV2jLMDplr8KGb9YQf1lXVYe94Dsnktap9DU6_p6VSj3az1p9oGCXrHpiWDhPltTWLc81RCHZF96nsA4wuwA0EySv7zawYvIYzeajsEEqbfygFuuJVM6L7uzq5yAz2HGZYVg2cUyOuCglU"/>
+</div>
+<h3 class="font-display-lg text-headline-md mb-4 gold-underline">Precision</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">The surgical application of effort. We focus on the high-leverage actions that yield exponential returns on energy and time.</p>
+</div>
+<div class="group relative">
+<div class="mb-8 overflow-hidden glass-card">
+<img class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-110 opacity-50" data-alt="A conceptual image of a mountain peak piercing through a layer of dark, swirling clouds, lit by the first rays of a golden sunrise. The image symbolizes the ultimate achievement and clarity of vision offered by the Aurelius brand, rendered in a cinematic, dark, and powerful style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZbKbZbbQ8ymntQtvbG2FzoH6ylo-wKv2T-z7oaN6B0l-ijye1LfRjyynuZ1lI4WgnhC4SsqwoEbuYCAYxAYk0ZurSPmJc7j5jLeOmgFsg6WdIZ1p2egWlS2m1MjP4rXlakTyg9-KBLB-3RWsv5fGOyer-yKDSKrAIJz5wXzShdg2zQ8TuOoz-YQsDRLbYccWxaTimiIKyfg4Bj6FWpOEmps0C_P19-PJDy4C6JiP7RAHW3vBRGLlAdo9UvUoF5mvUZXHMLFYTeuI"/>
+</div>
+<h3 class="font-display-lg text-headline-md mb-4 gold-underline">Legacy</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Building beyond the self. We empower leaders to create systems and cultures that endure long after their personal tenure.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-section-gap-desktop text-center">
+<div class="max-w-2xl mx-auto px-margin-edge">
+<h2 class="font-display-lg text-headline-lg-mobile md:text-headline-lg mb-12">The Journey to Mastery Begins with a Single Conversation.</h2>
+<button class="bg-primary text-on-primary px-12 py-5 font-label-caps text-label-caps magnetic-glow hover:opacity-90 transition-all">
+                    Apply for Selection
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap-desktop bg-surface border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto px-margin-edge">
+<div class="md:col-span-1">
+<div class="font-display-lg text-headline-lg text-primary mb-6">AURELIUS</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Executive Leadership Architecture.</p>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-primary mb-8 block">NAVIGATE</span>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Philosophy</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Programs</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Insights</a></li>
+</ul>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-primary mb-8 block">LEGAL</span>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Press Kit</a></li>
+</ul>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-primary mb-8 block">GLOBAL OFFICES</span>
+<ul class="space-y-4">
+<li class="font-body-md text-body-md text-on-surface-variant">London, Mayfair</li>
+<li class="font-body-md text-body-md text-on-surface-variant">Zurich, Enge</li>
+<li class="font-body-md text-body-md text-on-surface-variant">Singapore, Marina Bay</li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-edge mt-24 pt-12 border-t border-primary/5 flex flex-col md:flex-row justify-between items-center gap-6">
+<span class="font-body-md text-body-md text-on-surface-variant/50 text-[10px] tracking-widest">© 2024 AURELIUS EXECUTIVE LEADERSHIP. ALL RIGHTS RESERVED.</span>
+<div class="flex gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-xl">share</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-xl">mail</span></a>
+</div>
+</div>
+</footer>
+</body></html>

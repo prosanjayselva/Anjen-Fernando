@@ -1,0 +1,333 @@
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Montserrat:wght@400;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "surface-container-highest": "#353534",
+                  "on-tertiary-fixed": "#1a1c1c",
+                  "on-background": "#e5e2e1",
+                  "surface-container-lowest": "#0e0e0e",
+                  "on-secondary": "#3b2f00",
+                  "on-tertiary-fixed-variant": "#454747",
+                  "tertiary-fixed": "#e2e2e2",
+                  "on-error": "#690005",
+                  "surface-variant": "#353534",
+                  "on-primary-fixed": "#241a00",
+                  "primary-fixed": "#ffe088",
+                  "tertiary-container": "#b2b3b3",
+                  "outline": "#99907c",
+                  "surface": "#131313",
+                  "on-tertiary": "#2f3131",
+                  "on-surface-variant": "#d0c5af",
+                  "error-container": "#93000a",
+                  "secondary-fixed": "#f8e19b",
+                  "on-primary-container": "#554300",
+                  "primary-fixed-dim": "#e9c349",
+                  "on-secondary-fixed-variant": "#54450e",
+                  "inverse-primary": "#735c00",
+                  "secondary": "#dbc582",
+                  "surface-bright": "#3a3939",
+                  "on-tertiary-container": "#434546",
+                  "background": "#131313",
+                  "secondary-container": "#574811",
+                  "inverse-on-surface": "#313030",
+                  "surface-container": "#201f1f",
+                  "secondary-fixed-dim": "#dbc582",
+                  "on-secondary-container": "#ccb775",
+                  "error": "#ffb4ab",
+                  "surface-tint": "#e9c349",
+                  "surface-container-high": "#2a2a2a",
+                  "inverse-surface": "#e5e2e1",
+                  "surface-dim": "#131313",
+                  "on-surface": "#e5e2e1",
+                  "primary": "#f2ca50",
+                  "surface-container-low": "#1c1b1b",
+                  "outline-variant": "#4d4635",
+                  "primary-container": "#d4af37",
+                  "on-error-container": "#ffdad6",
+                  "on-primary-fixed-variant": "#574500",
+                  "on-primary": "#3c2f00",
+                  "on-secondary-fixed": "#231b00",
+                  "tertiary-fixed-dim": "#c6c6c7",
+                  "tertiary": "#cecece"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.125rem",
+                  "lg": "0.25rem",
+                  "xl": "0.5rem",
+                  "full": "0.75rem"
+          },
+          "spacing": {
+                  "section-gap-mobile": "80px",
+                  "gutter": "32px",
+                  "container-max": "1440px",
+                  "margin-edge": "64px",
+                  "unit": "8px",
+                  "section-gap-desktop": "160px"
+          },
+          "fontFamily": {
+                  "display-lg": ["Playfair Display"],
+                  "label-caps": ["Montserrat"],
+                  "display-lg-mobile": ["Playfair Display"],
+                  "body-lg": ["Montserrat"],
+                  "headline-md": ["Playfair Display"],
+                  "headline-lg": ["Playfair Display"],
+                  "body-md": ["Montserrat"],
+                  "headline-lg-mobile": ["Playfair Display"]
+          },
+          "fontSize": {
+                  "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                  "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.2em", "fontWeight": "600"}],
+                  "display-lg-mobile": ["44px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                  "body-lg": ["18px", {"lineHeight": "1.8", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                  "headline-md": ["32px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                  "headline-lg": ["40px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                  "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                  "headline-lg-mobile": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-card {
+      backdrop-filter: blur(20px);
+      background: rgba(255, 255, 255, 0.03);
+      border-top: 1px solid rgba(212, 175, 55, 0.3);
+    }
+    .magnetic-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 150%;
+      height: 150%;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0) 70%);
+      z-index: -1;
+      pointer-events: none;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #131313;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #d4af37;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md custom-scrollbar">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/10 backdrop-blur-xl border-b border-primary/10">
+<nav class="flex justify-between items-center max-w-container-max mx-auto px-margin-edge h-20">
+<div class="font-display-lg text-headline-md tracking-tighter text-primary">AURELIUS</div>
+<div class="hidden md:flex items-center space-gap-gutter gap-gutter">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-500" href="#">Philosophy</a>
+<a class="font-label-caps text-label-caps text-primary font-semibold border-b border-primary" href="#">Programs</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-500" href="#">Insights</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-500" href="#">Contact</a>
+</div>
+<button class="bg-surface border border-primary/30 px-6 py-2 font-label-caps text-label-caps text-primary hover:opacity-80 transition-all duration-300 active:scale-95">
+        Reserve Consult
+      </button>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-40" data-alt="A cinematic, high-contrast aerial view of the Zurich skyline at dusk, with the Swiss Alps in the distant background under a moody, violet and deep blue sky. The city lights twinkle with a warm golden glow, reflecting the brand's premium aesthetic. The atmosphere is quiet, powerful, and exclusive, emphasizing a sense of global executive leadership and serenity. The visual style is polished and architectural, using a dark-mode palette punctuated by metallic light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgCE8BcD0YEVkKFFc0XeKVz2kDUKtnUZEwlNdUSpitwpCIfahcnciRL1eJJNPOeTJ1kRfS0Pymw8VXw3hf-W1iOs1vG4vvHNT5MsL6IW8O0aIZ5BId5Ok5JIVkmnhL7wlhPyolBaho055v1bxM96i0nlpe2KyxrvOZdJdUqndDBE7RevBx2HliWXSS3rC_nd4NHx45FpvFty6LWK18iHuc58gw3zqWdGqzWjrSQ2mkppM0_ljOExfAzHVTICmI4JjRWZMQlBQhEFw"/>
+<div class="absolute inset-0 bg-gradient-to-b from-surface/20 via-surface/80 to-surface"></div>
+</div>
+<div class="relative z-10 text-center max-w-4xl px-margin-edge">
+<div class="inline-block py-2 px-4 glass-card border border-primary/20 mb-8">
+<span class="font-label-caps text-label-caps text-primary">EXECUTIVE IMMERSION SERIES</span>
+</div>
+<h1 class="font-display-lg text-display-lg mb-6 leading-tight">The Catalyst Summit | <span class="text-primary italic">Zurich</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">
+          An unprecedented convergence of cognitive science and strategic leadership in the heart of the Swiss Alps. Reserved for the world's most influential architects of industry.
+        </p>
+<div class="flex flex-col md:flex-row gap-gutter justify-center">
+<button class="relative group bg-surface border border-primary/50 px-12 py-5 font-label-caps text-label-caps text-primary transition-all duration-300 active:scale-95 overflow-hidden">
+<span class="relative z-10">Reserve Seat</span>
+<div class="magnetic-glow opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+</button>
+<button class="border border-white/10 px-12 py-5 font-label-caps text-label-caps text-on-surface hover:bg-white/5 transition-all duration-300">
+            View Syllabus
+          </button>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-40">
+<span class="font-label-caps text-[10px] mb-2">SCROLL TO EXPLORE</span>
+<div class="w-[1px] h-12 bg-gradient-to-b from-primary to-transparent"></div>
+</div>
+</section>
+<!-- Curriculum Breakdown (Accordions) -->
+<section class="py-section-gap-desktop max-w-container-max mx-auto px-margin-edge">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<div class="lg:col-span-4">
+<h2 class="font-headline-lg text-headline-lg mb-6">Program <br/><span class="text-primary italic">Architecture</span></h2>
+<p class="font-body-md text-on-surface-variant">The 72-hour immersion is meticulously structured into four pillars of cognitive and organizational evolution.</p>
+</div>
+<div class="lg:col-span-8 space-y-4">
+<!-- Accordion Item 1 -->
+<div class="glass-card p-10 cursor-pointer group hover:bg-white/[0.05] transition-all duration-500">
+<div class="flex justify-between items-center">
+<div>
+<span class="font-label-caps text-[10px] text-primary block mb-2">PILLAR 01</span>
+<h3 class="font-headline-md text-headline-md">Cognitive Precision &amp; Neural Focus</h3>
+</div>
+<span class="material-symbols-outlined text-primary text-3xl group-hover:rotate-45 transition-transform duration-500">add</span>
+</div>
+<div class="mt-8 pt-8 border-t border-white/10">
+<p class="font-body-md text-on-surface-variant max-w-2xl">Unpack the neuroscience of high-stakes decision making. Learn to navigate cognitive biases and cultivate an elite mindset that thrives under extreme volatility.</p>
+<ul class="mt-6 space-y-4">
+<li class="flex items-center gap-4">
+<span class="w-8 h-[1px] bg-primary"></span>
+<span class="font-body-md">Advanced Neural Feedback Sessions</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="w-8 h-[1px] bg-primary"></span>
+<span class="font-body-md">Flow State Architectures for CEOs</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Accordion Item 2 -->
+<div class="glass-card p-10 cursor-pointer group hover:bg-white/[0.05] transition-all duration-500 opacity-60">
+<div class="flex justify-between items-center">
+<div>
+<span class="font-label-caps text-[10px] text-primary block mb-2">PILLAR 02</span>
+<h3 class="font-headline-md text-headline-md">Strategic Futuring &amp; Scenario Mapping</h3>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-3xl">add</span>
+</div>
+</div>
+<!-- Accordion Item 3 -->
+<div class="glass-card p-10 cursor-pointer group hover:bg-white/[0.05] transition-all duration-500 opacity-60">
+<div class="flex justify-between items-center">
+<div>
+<span class="font-label-caps text-[10px] text-primary block mb-2">PILLAR 03</span>
+<h3 class="font-headline-md text-headline-md">Influence Dynamics in Global Power Centers</h3>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-3xl">add</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Faculty / Coach Bios -->
+<section class="py-section-gap-desktop bg-surface-container-low overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-edge">
+<div class="text-center mb-20">
+<h2 class="font-headline-lg text-headline-lg mb-4">Master Architects</h2>
+<div class="w-20 h-[1px] bg-primary mx-auto mb-6"></div>
+<p class="font-body-md text-on-surface-variant">Guided by individuals who have navigated the most complex landscapes of the 21st century.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Coach 1 -->
+<div class="group">
+<div class="relative aspect-[3/4] mb-8 overflow-hidden glass-card">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="A premium, studio-lit portrait of a distinguished male executive coach in his late 50s. He is wearing a dark, textured charcoal suit with a crisp white shirt. The lighting is dramatic, high-contrast chiaroscuro style, highlighting his focused expression. The background is a deep, matte black, creating a sense of gravitas and quiet luxury consistent with the Aurelius brand. He embodies confidence, wisdom, and cinematic authority." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe1OvuBA-xYamtyVvkbxwZ0vQW8293BjV5t_IHtPhlrNdY_nhvo5STbYYmDh2T1anNnTkWuaSTOXT7dzITiQUOO_SaqhVTSKjvxe8bPexH_WVYw9JjU6lmW_1uYRW4D2miFVlIipMOo-oCmdFXJfmwGoz7wMwf2XU3J9RuXoLPshzK2TJzMFxUmNEaIlIaOiZu18Gpa8PDD7fCQeIzaNlIO95u6ClVO4_uw3qtoXOEjmrvksjI1moE4T6QEOl0B89SReBXyf13xCU"/>
+<div class="absolute inset-0 border-t border-primary/40 pointer-events-none"></div>
+</div>
+<h4 class="font-headline-md text-headline-md mb-2">Dr. Marcus Vance</h4>
+<span class="font-label-caps text-[10px] text-primary tracking-widest mb-4 block">NEURO-STRATEGIC LEAD LEAD</span>
+<p class="font-body-md text-on-surface-variant">Former advisor to three G20 heads of state and a pioneer in behavioral economics at Oxford.</p>
+</div>
+<!-- Coach 2 -->
+<div class="group">
+<div class="relative aspect-[3/4] mb-8 overflow-hidden glass-card">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="A sophisticated professional portrait of a senior female leader with an aura of absolute command. She is styled in a minimalist, high-fashion navy blazer. The lighting is soft but directional, casting subtle shadows that emphasize her sharp features and intelligent gaze. The color palette is dark and moody, with a slight warm glow reflecting off her jewelry. The image evokes a sense of elite coaching and deep-dive strategic insight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrLOQNh2t5oO07TH-wN0NuhkrlufzxkB8ESqxV0spDtmomnt52aR2LaOw_Pzhb6y2Potb32Bb77NWULZvriVR4ItUEDChX6W0SYF2WwxVdCPZB4P6fPbbGj7NlxRrKPfdvggIXEWGdONivIBSHaNriRG-pLJlO7q-Ki4Rcy7m2dEsO90p4I4_isFdBSZLWBl4IB3GYdkq06HOLmPU_qQDFRYUanaT9CIRDC4Z9DU0hgTgMb-3dj4zxWGpdHxgrY4ewmnVxzt_8JLQ"/>
+<div class="absolute inset-0 border-t border-primary/40 pointer-events-none"></div>
+</div>
+<h4 class="font-headline-md text-headline-md mb-2">Elena Rossi</h4>
+<span class="font-label-caps text-[10px] text-primary tracking-widest mb-4 block">SYSTEMIC INFLUENCE ARCHITECT</span>
+<p class="font-body-md text-on-surface-variant">Architect of the global 'Silent Power' framework used by Fortune 10 boards for high-stakes negotiation.</p>
+</div>
+<!-- Coach 3 -->
+<div class="group">
+<div class="relative aspect-[3/4] mb-8 overflow-hidden glass-card">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="A portrait of a male tech-focused executive coach, dressed in a black turtleneck, looking thoughtfully off-camera. The lighting is cool and contemporary, featuring deep blacks and ethereal blue-silver highlights on the fabric and hair. The background is a minimalist, slightly blurred office environment with glass elements. The visual style is sleek and future-oriented, aligning with the quiet luxury and high-stakes consulting aesthetic of the brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArcavb0zT6bN4jjTeDYCCPmqR94ZzWaqxarkcLAw4Yjggub0u0lhDs5jC0oe21weYshY8yJz2-RhC7lqMSH47YiFbnlHYhNL9jroNTWzT_3FIZQDsoiI3gv58aNFj-n9_OpQUdgGlA2TFwo2L_a00l4fLRIKY7xyvsPO8xej6i4m0SXpRIYMblFO1SVwfA6T1j2Aaxap2JF9C8GC0q_auqf0aQkHnyYjsyCbl7tn-kMOU_9sZOvC6xPnwlrhZPwxV5jrCYiX6vLQo"/>
+<div class="absolute inset-0 border-t border-primary/40 pointer-events-none"></div>
+</div>
+<h4 class="font-headline-md text-headline-md mb-2">Julian Kade</h4>
+<span class="font-label-caps text-[10px] text-primary tracking-widest mb-4 block">FUTURES &amp; SCENARIO DESIGN</span>
+<p class="font-body-md text-on-surface-variant">Leading expert on AI integration and decentralized organizational structures for the next decade.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Reserve Seat CTA -->
+<section class="py-section-gap-desktop relative overflow-hidden">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/5 blur-[120px] rounded-full -z-10"></div>
+<div class="max-w-4xl mx-auto px-margin-edge text-center glass-card p-20 border border-primary/10">
+<h2 class="font-display-lg text-headline-lg mb-8">Ascend to the <span class="text-primary">Next Stratum</span>.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-xl mx-auto">
+          The Catalyst Summit is strictly limited to 12 participants per session to ensure radical proximity to our faculty.
+        </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 text-left">
+<div class="p-6 border-l border-primary/30 bg-white/[0.02]">
+<span class="font-label-caps text-[10px] text-primary block mb-2">INVESTMENT</span>
+<p class="font-display-lg text-headline-md">$24,500 <span class="text-body-md font-body-md text-on-surface-variant">USD</span></p>
+<p class="text-[11px] text-on-surface-variant mt-2 italic font-body-md">Includes all-inclusive Zurich accommodations &amp; private transit.</p>
+</div>
+<div class="p-6 border-l border-white/10 bg-white/[0.02]">
+<span class="font-label-caps text-[10px] text-on-surface-variant block mb-2">AVAILABILITY</span>
+<p class="font-display-lg text-headline-md">4 <span class="text-body-md font-body-md text-on-surface-variant">Seats Remaining</span></p>
+<p class="text-[11px] text-on-surface-variant mt-2 italic font-body-md">Next Cohort: November 14-17, 2024</p>
+</div>
+</div>
+<button class="w-full md:w-auto bg-primary text-on-primary py-6 px-20 font-label-caps text-label-caps font-bold transition-all duration-500 hover:tracking-widest active:scale-95">
+          APPLY FOR ADMISSION
+        </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface w-full py-section-gap-desktop border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto px-margin-edge">
+<div class="md:col-span-1">
+<div class="font-display-lg text-headline-lg text-primary mb-6">AURELIUS</div>
+<p class="font-body-md text-on-surface-variant text-sm pr-4">Global Executive Leadership &amp; Strategic Cognitive Evolution.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-caps text-primary text-[10px] mb-4">LOCATIONS</h5>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Zurich</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">London</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Singapore</a>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-caps text-primary text-[10px] mb-4">RESOURCES</h5>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Press Kit</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Insights</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Case Studies</a>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-caps text-primary text-[10px] mb-4">LEGAL</h5>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Global Offices</a>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-edge mt-20 pt-8 border-t border-white/5 flex justify-between items-center">
+<p class="font-body-md text-[10px] text-on-surface-variant uppercase tracking-widest opacity-50">© 2024 AURELIUS EXECUTIVE LEADERSHIP. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-on-surface-variant text-xl cursor-pointer hover:text-primary">public</span>
+<span class="material-symbols-outlined text-on-surface-variant text-xl cursor-pointer hover:text-primary">shield_person</span>
+</div>
+</div>
+</footer>
+</body></html>

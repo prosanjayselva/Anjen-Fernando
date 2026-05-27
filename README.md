@@ -7,14 +7,15 @@
 1. Install dependencies at root: `npm install`
 2. Start Web: `npm run dev` (or `npm run dev:web`)
 
-## Deploy to Vercel (Private GitHub Repo Supported)
-1. Keep repo private in GitHub (this is supported by Vercel).
-2. Import repo in Vercel and connect GitHub account access.
-3. Vercel will use `vercel.json` from project root:
-   - Install: `npm install`
-   - Build: `npm run build --workspace @game2grow/web`
-   - Output: `apps/web/dist`
-4. Redeploy.
+## Deploy to GitHub Pages
+1. Build + publish:
+   - `npm run deploy`
+2. In GitHub repo settings:
+   - `Settings -> Pages`
+   - Source: `Deploy from a branch`
+   - Branch: `gh-pages` and folder `/ (root)`
+3. Site URL:
+   - `https://prosanjayselva.github.io/Anjen-Fernando/#/`
 
 Notes:
 - Program filtering and enquiry capture are frontend-only.

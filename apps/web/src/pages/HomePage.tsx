@@ -10,6 +10,7 @@ import {
   podcastEpisodes,
   programTopics
 } from "../lib/brochureContent";
+import { Link } from "react-router-dom";
 import { TopicMarquee } from "../components/TopicMarquee";
 import { siteImages } from "../lib/siteImages";
 
@@ -81,8 +82,8 @@ export function HomePage() {
           <p className="mt-6 max-w-2xl text-lg text-zinc-300">{organizationSummary}</p>
           <p className="mt-3 text-[11px] uppercase tracking-[0.16em] text-brandGold/90 sm:text-sm sm:tracking-[0.28em]">{brochureTagline}</p>
           <div className="mt-10 flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:gap-4">
-            <a href="/contact" className="gold-glow rounded bg-brandGold px-7 py-3 text-center font-semibold text-black">Book a Free Demo</a>
-            <a href="/about" className="rounded border border-brandGold px-7 py-3 text-center text-brandGold">Get in Touch</a>
+            <Link to="/contact" className="gold-glow rounded bg-brandGold px-7 py-3 text-center font-semibold text-black">Book a Free Demo</Link>
+            <Link to="/about" className="rounded border border-brandGold px-7 py-3 text-center text-brandGold">Get in Touch</Link>
           </div>
         </div>
       </section>
@@ -242,7 +243,7 @@ export function HomePage() {
             <p className="mt-4 text-zinc-300">{contactCallToAction}</p>
           </div>
           <div className="glass-card rounded-xl p-6">
-            <a href="/contact" className="block w-full rounded bg-brandGold px-6 py-3 text-center font-semibold text-black">Reserve Consultation</a>
+            <Link to="/contact" className="block w-full rounded bg-brandGold px-6 py-3 text-center font-semibold text-black">Reserve Consultation</Link>
           </div>
         </div>
       </section>

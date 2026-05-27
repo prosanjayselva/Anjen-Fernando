@@ -138,7 +138,7 @@ export function HomePage() {
           <p className="text-[11px] tracking-[0.16em] text-brandGold sm:text-sm sm:tracking-[0.35em]">CURATED SOLUTIONS</p>
           <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl">Elite Learning Domains</h2>
         </div>
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
           {serviceCards.map((card) => (
             <article key={card.title} className="glass-card rounded-xl p-8 transition hover:-translate-y-1 hover:border-brandGold/70">
               <span className="material-symbols-outlined text-4xl text-brandGold">{card.icon}</span>
@@ -154,7 +154,7 @@ export function HomePage() {
           <p className="text-[11px] tracking-[0.16em] text-brandGold sm:text-sm sm:tracking-[0.35em]">METHODOLOGY</p>
           <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl">Experiential Learning Through Play</h2>
         </div>
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {[
             [siteImages.workshopYellowSimulation, "Simulation-based decision labs"],
             [siteImages.workshopCardActivity, "Collaborative problem-solving tasks"],
@@ -188,7 +188,7 @@ export function HomePage() {
           <p className="text-[11px] tracking-[0.16em] text-brandGold sm:text-sm sm:tracking-[0.32em]">WHY GAME2GROW</p>
           <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl">Outcome Signals</h2>
         </div>
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
           {valueCards.map((item) => (
               <article key={item.title} className="glass-card rounded-xl p-8 text-center">
                 <span className="material-symbols-outlined text-4xl text-brandGold">{item.icon}</span>
@@ -216,7 +216,7 @@ export function HomePage() {
           <p className="text-[11px] tracking-[0.16em] text-brandGold sm:text-sm sm:tracking-[0.32em]">THE KNOWLEDGE BASE</p>
           <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl">Watch Anjen in Action</h2>
         </div>
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
           {podcastEpisodes.map((item) => (
             <article key={item.label} className="glass-card rounded-xl p-7">
               <p className="text-xs tracking-[0.2em] text-brandGold">YARDSTICK ACADEMY PODCAST</p>

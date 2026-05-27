@@ -365,6 +365,40 @@ img {
   animation: menuItemSlideIn 0.48s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
+.tablet-menu-shell {
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.tablet-menu-track {
+  display: flex;
+  min-width: max-content;
+  gap: 0.5rem;
+}
+
+.tablet-menu-link {
+  border-radius: 999px;
+  border: 1px solid rgba(201, 168, 76, 0.26);
+  background: rgba(0, 0, 0, 0.28);
+  padding: 0.42rem 0.82rem;
+  font-size: 0.79rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #d4d4d8;
+  white-space: nowrap;
+}
+
+.tablet-menu-link:hover {
+  color: #ffffff;
+  border-color: rgba(201, 168, 76, 0.6);
+}
+
+.tablet-menu-link-active {
+  border-color: rgba(201, 168, 76, 0.58);
+  background: rgba(201, 168, 76, 0.12);
+  color: #c9a84c;
+}
+
 @keyframes menuItemSlideIn {
   0% {
     opacity: 0;

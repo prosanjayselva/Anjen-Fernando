@@ -32,7 +32,7 @@ export function PortfolioPage() {
         </p>
       </header>
 
-      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {portfolioItems.map((item) => (
           <article key={item.title} className="glass-card rounded-xl p-7">
             <h2 className="text-2xl text-brandGold">{item.title}</h2>
@@ -65,7 +65,7 @@ export function PortfolioPage() {
       <article className="glass-card rounded-xl p-8">
         <h2 className="text-3xl text-brandGold">Featured Podcast Series</h2>
         <p className="mt-3 text-zinc-300">Yardstick Academy - Gamified Learning and Career Development (3-part series).</p>
-        <div className="mt-5 grid gap-4 md:grid-cols-3">
+        <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {podcastEpisodes.map((episode) => (
             <a
               key={episode.label}

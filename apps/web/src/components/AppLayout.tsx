@@ -52,6 +52,27 @@ export function AppLayout() {
     return () => observer.disconnect();
   }, [pathname]);
 
+  useEffect(() => {
+    if (!mobileMenuOpen) {
+      return;
+    }
+
+    const originalOverflow = document.body.style.overflow;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <div className="min-h-screen bg-[#131313] text-zinc-100">
       <Butterflies />
@@ -79,8 +100,10 @@ export function AppLayout() {
               </Link>
               <button
                 type="button"
-                className="inline-flex rounded border border-brandGold/50 p-2 text-brandGold md:hidden"
+                className="inline-flex rounded border border-brandGold/50 p-2 text-brandGold lg:hidden"
                 aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={mobileMenuOpen}
+                aria-controls="mobile-nav-menu"
                 onClick={() => setMobileMenuOpen((prev) => !prev)}
               >
                 <span className="material-symbols-outlined">
@@ -90,7 +113,7 @@ export function AppLayout() {
             </div>
           </div>
 
-          <nav className="hidden gap-5 pb-3 text-base md:flex">
+          <nav className="hidden gap-5 pb-3 text-base lg:flex">
             {navItems.map(([to, label]) => (
               <NavLink
                 key={to}
@@ -103,7 +126,8 @@ export function AppLayout() {
           </nav>
 
           <div
-            className={`mobile-menu-shell md:hidden ${
+            id="mobile-nav-menu"
+            className={`mobile-menu-shell lg:hidden ${
               mobileMenuOpen ? "mobile-menu-shell-open" : "mobile-menu-shell-closed"
             }`}
             aria-hidden={!mobileMenuOpen}

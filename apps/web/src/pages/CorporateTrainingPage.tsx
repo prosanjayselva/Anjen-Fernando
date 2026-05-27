@@ -113,7 +113,7 @@ export function CorporateTrainingPage() {
           </p>
         </div>
 
-        <div className="mt-6 grid gap-3 md:grid-cols-3">
+        <div className="mt-6 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
           <input
             placeholder="Search program by name or outcome"
             value={search}

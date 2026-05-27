@@ -36,7 +36,7 @@ export function CareerMentoringPage() {
           Mentoring is led by {founderProfile.name}, a {founderProfile.role.toLowerCase()} with {founderProfile.yearsExperience}
           years of training and talent development experience.
         </p>
-        <div className="mt-6 grid gap-5 md:grid-cols-3">
+        <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {mentoringPillars.map((pillar) => (
             <article key={pillar.title} className="rounded-lg border border-brandGold/20 bg-black/30 p-5">
               <h3 className="text-2xl text-brandGold">{pillar.title}</h3>

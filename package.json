@@ -11,7 +11,7 @@
     "build": "npm run build:web",
     "build:web": "npm --workspace @game2grow/web run build",
     "predeploy": "npm run build:web",
-    "deploy": "gh-pages -d apps/web/dist"
+    "deploy": "gh-pages --no-history -d apps/web/dist -r git@github.com:prosanjayselva/Anjen-Fernando.git"
   },
   "devDependencies": {
     "gh-pages": "^6.3.0"

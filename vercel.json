@@ -1,6 +1,6 @@
 {
-  "installCommand": "npm install",
-  "buildCommand": "npm run build --workspace @game2grow/web",
+  "installCommand": "npm ci",
+  "buildCommand": "npm run build:web",
   "outputDirectory": "apps/web/dist",
   "rewrites": [
     {

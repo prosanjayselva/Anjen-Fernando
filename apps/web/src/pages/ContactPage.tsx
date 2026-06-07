@@ -37,8 +37,7 @@ export function ContactPage() {
   return (
     <section className="space-y-8">
       <header className="rounded-2xl border border-brandGold/25 bg-black/60 p-6 sm:p-7 md:p-10">
-        <p className="text-[11px] tracking-[0.16em] text-brandGold sm:text-sm sm:tracking-[0.28em]">CONTACT</p>
-        <h1 className="mt-3 text-2xl sm:text-3xl md:text-5xl">Ready to Level Up?</h1>
+        <h1 className="mt-3 text-xl sm:text-2xl md:text-4xl">Ready to Level Up?</h1>
         <p className="mt-3 max-w-3xl text-zinc-300">{contactCallToAction}</p>
       </header>
 
@@ -105,22 +104,6 @@ export function ContactPage() {
               >
                 CALL NOW
               </a>
-            </div>
-          </article>
-
-          <article className="glass-card rounded-xl p-7">
-            <p className="text-xs uppercase tracking-[0.2em] text-brandGold">Connect Online</p>
-            <a
-              href="https://www.linkedin.com/in/anjen-fernando"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-3 inline-block text-zinc-100 underline decoration-brandGold/70 underline-offset-4 transition hover:text-brandGold"
-            >
-              linkedin.com/in/anjen-fernando
-            </a>
-            <div className="mt-5 rounded-lg border border-brandGold/20 bg-zinc-900/60 p-4 text-sm text-zinc-300">
-              Preferred response flow: Share your objective, target audience, and expected timeline. The team will propose
-              a suitable simulation format and session plan.
             </div>
           </article>
         </aside>

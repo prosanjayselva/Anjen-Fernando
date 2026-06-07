@@ -29,8 +29,7 @@ export function StudentProgramsPage() {
   return (
     <section className="space-y-8">
       <header className="rounded-2xl border border-brandGold/25 bg-black/60 p-6 sm:p-8 md:p-12">
-        <p className="text-[11px] tracking-[0.16em] text-brandGold sm:text-sm sm:tracking-[0.28em]">STUDENT PROGRAMS</p>
-        <h1 className="mt-4 text-3xl sm:text-4xl md:text-6xl">Stop Preparing. Start Performing.</h1>
+        <h1 className="mt-4 text-2xl sm:text-3xl md:text-4xl">Stop Preparing. Start Performing.</h1>
         <p className="mt-3 text-zinc-300">
           Gamified simulations built to improve employability, confidence, and industry readiness before students face
           real hiring and workplace challenges.

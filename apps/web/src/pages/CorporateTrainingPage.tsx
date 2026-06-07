@@ -52,8 +52,7 @@ export function CorporateTrainingPage() {
   return (
     <section className="space-y-10">
       <header className="rounded-2xl border border-brandGold/25 bg-black/60 p-6 sm:p-8 md:p-12">
-        <p className="text-[11px] tracking-[0.16em] text-brandGold sm:text-sm sm:tracking-[0.28em]">CORPORATE TRAINING</p>
-        <h1 className="mt-4 text-3xl sm:text-4xl md:text-6xl">Your Team Has the Skills. Does It Have the Edge?</h1>
+        <h1 className="mt-4 text-2xl sm:text-3xl md:text-4xl">Your Team Has the Skills. Does It Have the Edge?</h1>
         <p className="mt-4 text-zinc-300">
           Game2Grow designs customized gamified sessions for corporate teams through immersive simulations.
           Participants do not just absorb ideas. They apply them in high-pressure practice environments.

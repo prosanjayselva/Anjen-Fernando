@@ -13,8 +13,7 @@ export function FacultyDevelopmentPage() {
   return (
     <section className="space-y-8">
       <header className="rounded-2xl border border-brandGold/25 bg-black/60 p-6 sm:p-8 md:p-12">
-        <p className="text-[11px] tracking-[0.16em] text-brandGold sm:text-sm sm:tracking-[0.28em]">FACULTY DEVELOPMENT</p>
-        <h1 className="mt-4 text-3xl sm:text-4xl md:text-6xl">Equip Faculty to Mentor, Not Just Teach</h1>
+        <h1 className="mt-4 text-2xl sm:text-3xl md:text-4xl">Equip Faculty to Mentor, Not Just Teach</h1>
         <p className="mt-3 text-zinc-300">
           Faculty-focused experiential sessions that build mentoring capability, classroom engagement, and student
           readiness outcomes.

@@ -1,7 +1,6 @@
 import {
   audienceSegments,
   brochureHeroLine,
-  brochureTagline,
   brochureTestimonials,
   contactCallToAction,
   founderProfile,
@@ -65,6 +64,11 @@ const valueCards = [
   }
 ] as const;
 
+const getYouTubeThumbnail = (url: string) => {
+  const videoId = url.match(/youtu\.be\/([^?]+)/)?.[1];
+  return videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : "";
+};
+
 export function HomePage() {
   return (
     <div className="cinematic-grain space-y-16 sm:space-y-20 lg:space-y-24">
@@ -77,10 +81,8 @@ export function HomePage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(201,168,76,0.20),transparent_45%),radial-gradient(circle_at_80%_70%,rgba(201,168,76,0.08),transparent_50%)]" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/75 to-black" />
         <div className="relative z-10 mx-auto flex min-h-[72svh] max-w-4xl flex-col items-center justify-center px-4 text-center sm:min-h-[78svh] sm:px-6 md:min-h-[82svh]">
-          <span className="mb-6 text-[11px] tracking-[0.2em] text-brandGold sm:text-xs sm:tracking-[0.35em]">GAME2GROW EXPERIENCE</span>
-          <h1 className="text-3xl font-bold leading-tight sm:text-4xl md:text-6xl">{brochureHeroLine}</h1>
+          <h1 className="text-2xl font-bold leading-tight sm:text-3xl md:text-4xl">{brochureHeroLine}</h1>
           <p className="mt-6 max-w-2xl text-lg text-zinc-300">{organizationSummary}</p>
-          <p className="mt-3 text-[11px] uppercase tracking-[0.16em] text-brandGold/90 sm:text-sm sm:tracking-[0.28em]">{brochureTagline}</p>
           <div className="mt-10 flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:gap-4">
             <Link to="/contact" className="gold-glow rounded bg-brandGold px-7 py-3 text-center font-semibold text-black">Book a Free Demo</Link>
             <Link to="/about" className="rounded border border-brandGold px-7 py-3 text-center text-brandGold">Get in Touch</Link>
@@ -89,21 +91,21 @@ export function HomePage() {
       </section>
 
       <section className="section-fade grid gap-10 md:grid-cols-2 md:items-center">
-        <div className="glass-card relative h-[320px] overflow-hidden rounded-xl sm:h-[420px] lg:h-[520px]">
-          <img
-            src={siteImages.anjenLinkedinDp}
-            alt="Founder Anjen Fernando in a podcast discussion"
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />
-          <p className="absolute bottom-4 left-4 text-xs uppercase tracking-[0.22em] text-brandGold">Founder Spotlight</p>
-        </div>
         <div className="space-y-6">
-          <p className="text-[11px] tracking-[0.16em] text-brandGold sm:text-sm sm:tracking-[0.3em]">OUR PHILOSOPHY</p>
-          <h2 className="text-2xl sm:text-3xl md:text-5xl">No Slides. No Lectures. 100% Experience.</h2>
-          <p className="text-zinc-300">
-            People learn best by doing. Every Game2Grow session is designed as an immersive simulation where participants
-            make decisions, face consequences, reflect, and improve.
+          <p className="text-[10px] uppercase tracking-[0.22em] text-brandGold/70 sm:text-xs sm:tracking-[0.32em]">
+            OUR PHILOSOPHY
+          </p>
+          <div className="glass-card rounded-xl border border-brandGold/25 bg-black/35 p-5 sm:p-6">
+            <h3 className="text-xl font-semibold text-brandGold sm:text-2xl">Why Game to Grow?</h3>
+            <p className="mt-3 text-zinc-200">
+              Because real growth happens when people actively participate, make choices, and experience the result of
+              those choices in a guided environment.
+            </p>
+          </div>
+          <h2 className="text-xl sm:text-2xl md:text-4xl">No Slides. No Lectures.</h2>
+          <p className="max-w-2xl text-zinc-300">
+            Every Game2Grow session is designed as an immersive simulation where participants make decisions, face
+            consequences, reflect, and improve.
           </p>
           <div className="grid gap-4 sm:grid-cols-2">
             <article className="glass-card rounded-lg p-5">
@@ -116,12 +118,21 @@ export function HomePage() {
             </article>
           </div>
         </div>
+        <div className="glass-card relative h-[320px] overflow-hidden rounded-xl sm:h-[420px] lg:h-[520px]">
+          <img
+            src={siteImages.workshopCardActivity}
+            alt="Game-based collaboration activity during a Game2Grow workshop"
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+          <p className="absolute bottom-4 left-4 text-xs uppercase tracking-[0.22em] text-brandGold">Game-Based Learning</p>
+        </div>
       </section>
 
       <section className="section-fade space-y-10">
         <div className="text-center">
           <p className="text-[11px] tracking-[0.16em] text-brandGold sm:text-sm sm:tracking-[0.35em]">WHO WE SERVE</p>
-          <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl">Built for Real-World Performance</h2>
+          <h2 className="mt-4 text-xl sm:text-2xl md:text-3xl">Built for Real-World Performance</h2>
         </div>
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {audienceSegments.map((segment) => (
@@ -137,7 +148,7 @@ export function HomePage() {
       <section className="section-fade space-y-10">
         <div className="text-center">
           <p className="text-[11px] tracking-[0.16em] text-brandGold sm:text-sm sm:tracking-[0.35em]">CURATED SOLUTIONS</p>
-          <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl">Elite Learning Domains</h2>
+          <h2 className="mt-4 text-xl sm:text-2xl md:text-3xl">Elite Learning Domains</h2>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
           {serviceCards.map((card) => (
@@ -153,7 +164,7 @@ export function HomePage() {
       <section className="section-fade space-y-10">
         <div className="text-center">
           <p className="text-[11px] tracking-[0.16em] text-brandGold sm:text-sm sm:tracking-[0.35em]">METHODOLOGY</p>
-          <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl">Experiential Learning Through Play</h2>
+          <h2 className="mt-4 text-xl sm:text-2xl md:text-3xl">Experiential Learning Through Play</h2>
         </div>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {[
@@ -179,7 +190,7 @@ export function HomePage() {
       <section className="section-fade space-y-8">
         <div className="text-center">
           <p className="text-[11px] tracking-[0.16em] text-brandGold sm:text-sm sm:tracking-[0.32em]">PROGRAM TOPICS</p>
-          <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl">Competencies We Build</h2>
+          <h2 className="mt-4 text-xl sm:text-2xl md:text-3xl">Competencies We Build</h2>
         </div>
         <TopicMarquee items={programTopics} />
       </section>
@@ -187,7 +198,7 @@ export function HomePage() {
       <section className="section-fade space-y-6">
         <div className="text-center">
           <p className="text-[11px] tracking-[0.16em] text-brandGold sm:text-sm sm:tracking-[0.32em]">WHY GAME2GROW</p>
-          <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl">Outcome Signals</h2>
+          <h2 className="mt-4 text-xl sm:text-2xl md:text-3xl">Outcome Signals</h2>
         </div>
         <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
           {valueCards.map((item) => (
@@ -203,7 +214,7 @@ export function HomePage() {
       <section className="section-fade">
         <div className="glass-card rounded-2xl p-10 md:p-16">
           <p className="text-[11px] tracking-[0.16em] text-brandGold sm:text-sm sm:tracking-[0.32em]">VOICES OF IMPACT</p>
-          <blockquote className="mt-6 text-xl italic leading-relaxed sm:text-2xl md:text-4xl">
+          <blockquote className="mt-6 text-lg italic leading-relaxed sm:text-xl md:text-2xl">
             "{brochureTestimonials[0].quote}"
           </blockquote>
           <p className="mt-8 text-sm uppercase tracking-[0.22em] text-zinc-300">
@@ -215,20 +226,34 @@ export function HomePage() {
       <section className="section-fade space-y-8">
         <div className="text-center">
           <p className="text-[11px] tracking-[0.16em] text-brandGold sm:text-sm sm:tracking-[0.32em]">THE KNOWLEDGE BASE</p>
-          <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl">Watch Anjen in Action</h2>
+          <h2 className="mt-4 text-xl sm:text-2xl md:text-3xl">Watch Anjen in Action</h2>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
           {podcastEpisodes.map((item) => (
-            <article key={item.label} className="glass-card rounded-xl p-7">
-              <p className="text-xs tracking-[0.2em] text-brandGold">YARDSTICK ACADEMY PODCAST</p>
-              <h3 className="mt-4 text-2xl">{item.label}</h3>
+            <article key={item.label} className="glass-card overflow-hidden rounded-xl">
               <a
                 href={item.url}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-4 inline-block text-sm text-zinc-300 underline decoration-brandGold/70 underline-offset-4"
+                className="group block"
               >
-                {item.url.replace("https://", "")}
+                <div className="relative aspect-video overflow-hidden">
+                  <img
+                    src={getYouTubeThumbnail(item.url)}
+                    alt={`Yardstick Academy Podcast ${item.label} thumbnail`}
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
+                  <span className="absolute inset-0 grid place-items-center">
+                    <span className="material-symbols-outlined rounded-full bg-brandGold p-3 text-3xl text-black shadow-[0_10px_30px_rgba(0,0,0,0.35)]">
+                      play_arrow
+                    </span>
+                  </span>
+                </div>
+                <div className="p-5">
+                  <p className="text-xs tracking-[0.2em] text-brandGold">YARDSTICK ACADEMY PODCAST</p>
+                  <h3 className="mt-3 text-2xl">{item.label}</h3>
+                </div>
               </a>
             </article>
           ))}
@@ -239,7 +264,7 @@ export function HomePage() {
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
           <div>
             <p className="text-[11px] tracking-[0.16em] text-brandGold sm:text-sm sm:tracking-[0.32em]">INITIATION</p>
-            <h2 className="mt-4 text-2xl sm:text-3xl md:text-5xl">Command Your Growth Journey</h2>
+            <h2 className="mt-4 text-xl sm:text-2xl md:text-4xl">Command Your Growth Journey</h2>
             <p className="mt-4 text-zinc-300">{contactCallToAction}</p>
           </div>
           <div className="glass-card rounded-xl p-6">

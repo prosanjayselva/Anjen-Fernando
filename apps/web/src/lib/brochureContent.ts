@@ -100,7 +100,7 @@ export const founderProfile = {
   certification:
     "Certified Professional Trainer in Experiential Learning (IIPE, Canada).",
   summary:
-    "Training and talent development leader with experience in campus recruitment, L&D, talent acquisition, and employee engagement across IT companies and engineering institutions."
+    "Anjen Fernando is a training and talent development leader with over 15 years of experience spanning campus recruitment, L&D strategy, talent acquisition, and employee engagement across IT companies and engineering institutions. As the founder of Game2Grow, he has designed and delivered 50+ gamified simulation programs reaching students, working professionals, and corporate teams across India, helping them build confidence, communication, and leadership capabilities through experiential learning.",
 } as const;
 
 export const founderFocusAreas = [
